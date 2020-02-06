@@ -1,10 +1,10 @@
 {
 	"id" : "consoWidget",
 	"name" : "Suivi Conso Widget",
-	"version": "0.1",
+	"version": "0.5",
 	"licence" : "AGPL",
 	"author" : "Thibaut Trarbach",
-	"require" : "3.0",
+	"require" : "3.2",
 	"category" : "energy",
 	"hasDependency" : 1,
 	"hasOwnDeamon" : 0,

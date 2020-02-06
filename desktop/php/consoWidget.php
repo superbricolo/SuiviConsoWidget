@@ -123,12 +123,24 @@ $eqLogics = eqLogic::byType('consoWidget');
                <br/>
                <br/>
                 
-                <div class="form-group">
+
+               <div class="form-group">
                     <label class="col-sm-3 control-label">{{idequip}}</label>
                     <div class="col-sm-3">
-                        <input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="idequip">
-                    </div>
-                </div>
+                        <select id="consoWidget_type"  class="eqLogicAttr configuration form-control" data-l1key="configuration" data-l2key="idequip">
+                        <?php
+                            $eqLogicsconso = eqLogic::byType('conso');
+
+                            echo '<option selected value="">Non Config</option>';
+                            foreach ($eqLogicsconso as $eqLogic) {
+                                if ($eqLogic->getIsEnable() == 1) {
+                                    echo '<option value='.$eqLogic->getId().' >'.$eqLogic->getName().'</option>';
+                                }
+                            } 
+                        ?>
+                       </select>
+                   </div>
+               </div>
         </div>
 </div>
 
