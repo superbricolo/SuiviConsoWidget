@@ -100,23 +100,23 @@ $eqLogics = eqLogic::byType('consoWidget');
                 <br/>
                 <br/>
 	            <div class="form-group">
-                    <label class="col-sm-3 control-label">{{Type De widget electrique}}</label>
+                    <label class="col-sm-3 control-label">{{Type de widget}}</label>
                     <div class="col-sm-3">
                         <select id="consoWidget_type"  class="eqLogicAttr configuration form-control" data-l1key="configuration" data-l2key="type_consoWidget">
-                           <option value="1">{{Tableau Prix}}</option>
-                           <option value="2">{{Tableau Consomation}}</option>
-                           <option value="3">{{Gauge Puissance}}</option>
-                           <option value="4">{{Tableau Variation}}</option>
-                           <option value="5">{{Consomation Du Jours}}</option>
-                           <option value="6">{{Statistique}}</option>
-                           <option value="7">{{7 Derniers Jours}}</option>
-                           <option value="8">{{4 Dernière semaine}}</option>
-                           <option value="9">{{12 dernirs mois}}</option>
-                           <option value="10">{{7 Dernier jous Euro}}</option>
-                           <option value="11">{{4 dernière semaine Euro}}</option>
+                           <option value="1">{{Tableau prix}}</option>
+                           <option value="2">{{Tableau consommation}}</option>
+                           <option value="3">{{Gauge puissance}}</option>
+                           <option value="4">{{Tableau variation}}</option>
+                           <option value="5">{{Consommation du jour}}</option>
+                           <option value="6">{{Statistiques}}</option>
+                           <option value="7">{{7 derniers jours}}</option>
+                           <option value="8">{{4 dernières semaines}}</option>
+                           <option value="9">{{12 derniers mois}}</option>
+                           <option value="10">{{7 derniers jours Euro}}</option>
+                           <option value="11">{{4 dernières semaines Euro}}</option>
                            <option value="12">{{12 derniers mois Euro}}</option>
-                           <option value="13">{{12 derrnièrs mois TTC}}</option>
-                           <option value="14">{{Degré jours unifié par ans}}</option>
+                           <option value="13">{{12 derniers mois TTC}}</option>
+                           <option value="14">{{Degré jour unifié par an}}</option>
                        </select>
                    </div>
                </div>
