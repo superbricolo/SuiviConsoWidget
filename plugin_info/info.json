@@ -11,7 +11,7 @@
 	"changelog" : "https://mickeys27.github.io/Docs/conso/#language#/changelog",
 	"documentation" : "https://mickeys27.github.io/Docs/conso/#language#/",
 	"link" : {
-		"forum":"https://www.jeedom.com/forum/viewtopic.php?f=149&t=8500"
+		"forum":"https://community.jeedom.com/t/plugin-suivi-conso-debuggage/"
 	},
 	"language" : ["fr_FR"],
 	"compatibility" : ["miniplus","smart","rpi","docker","diy"]
