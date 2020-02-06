@@ -11,6 +11,12 @@ $eqLogics = eqLogic::byType('consoWidget');
     <div class="col-xs-12 eqLogicThumbnailDisplay">
         <legend><i class="fas fa-cog"></i>  {{Gestion}}</legend>
             <div class="eqLogicThumbnailContainer">
+                <div class="cursor eqLogicAction logoSecondary">
+                    <a href="index.php?v=d&m=conso&p=conso"><img  style="margin-top:-32px;" src="plugins/conso/plugin_info/conso_icon.png" width="75" height="75" style="min-height:75px !important;" />
+                    <br />
+                    <span>{{LienSuiviConso}}</span></a>
+                </div>
+
                 <div class="cursor eqLogicAction logoPrimary" data-action="add">
                     <i class="fas fa-plus-circle"></i>
                     <br>

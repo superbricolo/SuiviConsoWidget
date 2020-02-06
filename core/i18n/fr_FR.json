@@ -20,6 +20,7 @@
         "Widget": "Suivi Conso Widget",
         "Typeinfoelec": "Type De widget electrique",
         "idequip": "Id équipement (Temporaire)",
+        "LienSuiviConso": "Suivi Conso",
 
         "elec1":"Tableau Prix",
         "elec2":"Tableau Consomation",
