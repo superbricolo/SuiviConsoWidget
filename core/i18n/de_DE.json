@@ -1,0 +1,40 @@
+{
+    "plugins\/consoWidget\/plugin_info\/configuration.php": {
+        "Rewrite Rules": "Rewrite Rules"
+    },
+    "plugins\/consoWidget\/desktop\/php\/consoWidget.php": {
+        "Ajouter": "Ajouter",
+        "Rechercher": "Rechercher",
+        "consoWidget": "Suivi Conso Widget",
+        "Général": "Général",
+        "Nom de l'équipement": "Nom de l'équipement",
+        "Nom de l'équipement template": "Nom de l'équipement template",
+        "Objet parent": "Objet parent",
+        "Aucun": "Aucun",
+        "Catégorie": "Catégorie",
+        "Activer": "Activer",
+        "Visible": "Visible",
+        "Type de consoWidget": "Type de consoWidget",
+        "Supprimer": "Supprimer",
+        "Sauvegarder": "Sauvegarder",
+        "Widget": "Suivi Conso Widget",
+        "Typeinfoelec": "Type De widget electrique",
+        "idequip": "Id équipement (Temporaire)",
+        "LienSuiviConso": "Suivi Conso",
+
+        "elec1":"Tableau Prix",
+        "elec2":"Tableau Consomation",
+        "elec3":"Gauge Puissance",
+        "elec4":"Tableau Variation",
+        "elec5":"Consomation Du Jours",
+        "elec6":"Statistique",
+        "elec7":"7 Derniers Jours",
+        "elec8":"4 Dernière semaine",
+        "elec9":"12 dernirs mois",
+        "elec10":"7 Dernier jous Euro",
+        "elec11":"4 dernière semaine Euro",
+        "elec12":"12 derniers mois Euro",
+        "elec13":"12 derrnièrs mois TTC",
+        "elec14":"Degré jours unifié par ans"
+    }
+}
