@@ -116,7 +116,7 @@ sendVarToJS('widgetId', $id=$_GET["widget"]);
 		<input type="hidden" value="<?php echo $datesynchro ?>" id="datesynchro">
 		<?php
 
-		include_once(__DIR__."/../../../conso/desktop/php/panel_dashboard.php");
+		include_once("panel_dashboard.php");
 		include_once(__DIR__."/../../../conso/desktop/php/panel_temperature.php");
 		include_once(__DIR__."/../../../conso/desktop/php/statistique/periode/panel_graph_periode.php");
 		include_once(__DIR__."/../../../conso/desktop/php/statistique/categorie/panel_graph_categorie.php");

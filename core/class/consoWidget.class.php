@@ -109,13 +109,9 @@ class consoWidget extends eqLogic {
 
 	public function getCode(){
 
-		if (isset($_SERVER['HTTPS'])) { 
-			if ($_SERVER['HTTPS'] == 'on') { 
-				$code = '<iframe width="100%" height="100%" src="https://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>'; 
-			} else { 
-				$code = '<iframe width="100%" height="100%" src="http://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>'; 
-			} 
-		} else { 
+		if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
+			$code = '<iframe width="100%" height="100%" src="https://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>'; 
+		} else {
 			$code = '<iframe width="100%" height="100%" src="http://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>';
 		}
 				
