@@ -108,12 +108,18 @@ class consoWidget extends eqLogic {
 
 
 	public function getCode(){
-		if( isset($_SERVER['HTTPS'] )) {
-			$code = '<iframe width="100%" height="100%" src="https://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>';
-		} else {
+
+		if (isset($_SERVER['HTTPS'])) { 
+			if ($_SERVER['HTTPS'] == 'on') { 
+				$code = '<iframe width="100%" height="100%" src="https://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>'; 
+			} else { 
+				$code = '<iframe width="100%" height="100%" src="http://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>'; 
+			} 
+		} else { 
 			$code = '<iframe width="100%" height="100%" src="http://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>';
 		}
-				preg_match_all("/#cmd([0-9]+)#/", $code, $matches, PREG_SET_ORDER);
+				
+		preg_match_all("/#cmd([0-9]+)#/", $code, $matches, PREG_SET_ORDER);
 		foreach($matches as $match){
 			$code = str_replace('#cmd'.$match[1].'#', cmd::byId($match[1])->toHtml(), $code);
 		}	
