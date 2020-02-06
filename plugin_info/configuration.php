@@ -23,8 +23,3 @@
         die();
     }
 ?>
-
-
-<form class="form-horizontal">
-<hr>
-     
