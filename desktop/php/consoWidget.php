@@ -97,7 +97,7 @@ foreach (jeedom::getConfiguration('eqLogic:category') as $key => $value) {
 
 
 	       <div class="form-group">
-                    <label class="col-sm-3 control-label">{{Type de Widget}}</label>
+                    <label class="col-sm-3 control-label">{{Type de widget}}</label>
                     <div class="col-sm-3">
                         <select id="consoWidget_type"  class="eqLogicAttr configuration form-control" data-l1key="configuration" data-l2key="type_consoWidget">
                            <option value="url">{{URL}}</option>
