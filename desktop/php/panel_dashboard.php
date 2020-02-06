@@ -239,7 +239,7 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 							</div>
 							<div  class="widget-content">
 								<div class="shortcuts" >';
-									include('panel_carousel.php');
+									include(__DIR__.'/../../../conso/desktop/php/panel_carousel.php');
 											echo '</div>
 							</div>
 						</div>
