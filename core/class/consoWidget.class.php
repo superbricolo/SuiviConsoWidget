@@ -108,8 +108,7 @@ class consoWidget extends eqLogic {
 
 
 	public function getCode(){
-
-		if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
+		if ($this->getConfiguration(consowidget_protocole) == 1) {
 			$code = '<iframe width="100%" height="100%" src="https://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>'; 
 		} else {
 			$code = '<iframe width="100%" height="100%" src="http://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>';
