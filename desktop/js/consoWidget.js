@@ -23,20 +23,3 @@
 function addCmdToTable(_cmd) {
  
 }
-
-$("#consoWidget_type").change(function(){
-	if($("#consoWidget_type").val() == "url"){
-		$("#consoWidget_proxy").show();
-		$("#labelUrl").show();
-		$("#labelCode").hide();
-		$(".consoWidget_proxy_info").hide();
-	} else {
-		$("#consoWidget_proxy").hide();
-		$("#labelUrl").hide();
-		$("#labelCode").show();
-		$(".consoWidget_proxy_info").show();
-	}
-});
-
-
-
