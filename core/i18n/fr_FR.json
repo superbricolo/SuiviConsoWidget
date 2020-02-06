@@ -1,0 +1,33 @@
+{
+    "plugins\/consoWidget\/plugin_info\/configuration.php": {
+        "Rewrite Rules": "Rewrite Rules"
+    },
+    "plugins\/consoWidget\/desktop\/php\/consoWidget.php": {
+        "Ajouter": "Ajouter",
+        "Rechercher": "Rechercher",
+        "consoWidget": "consoWidget",
+        "Général": "Général",
+        "Nom de l'équipement": "Nom de l'équipement",
+        "Nom de l'équipement template": "Nom de l'équipement template",
+        "Objet parent": "Objet parent",
+        "Aucun": "Aucun",
+        "Catégorie": "Catégorie",
+        "Activer": "Activer",
+        "Visible": "Visible",
+        "Type de consoWidget": "Type de consoWidget",
+        "URL": "URL",
+        "code HTML": "code HTML",
+        "Utiliser jeedom en proxy": "Utiliser jeedom en proxy",
+        "Code Html": "Code Html",
+        "utilisez #timestamp# qui est remplacé par le timestamp courant pour &eacute;viter le cache.": "utilisez #timestamp# qui est remplacé par le timestamp courant pour &eacute;viter le cache.",
+        "Prefixez les URL par #proxy# pour les faire passer par le proxy. Exemple : &lt;img src=\"#proxy#https:\/\/www.jeedom.com\/site\/logo.png\" \/&gt;": "Prefixez les URL par #proxy# pour les faire passer par le proxy. Exemple : &lt;img src=\"#proxy#https:\/\/www.jeedom.com\/site\/logo.png\" \/&gt;",
+        " #cmdN# sera remplac&eacute; par la commande N. Exemple : #cmd12# #cmd13# affiche les commandes 12 et 13 (si ce sont les commandes on et off d'un interrupteur cela affiche l'interrupteur) ": " #cmdN# sera remplac&eacute; par la commande N. Exemple : #cmd12# #cmd13# affiche les commandes 12 et 13 (si ce sont les commandes on et off d'un interrupteur cela affiche l'interrupteur) ",
+        " Les function javascriptd suivantes sont &eacute;galement disponible: consoWidget_cmd(id,value); consoWidget_startScenario(id); consoWidget_stopScenario(id);. Les commandes jquery ($.get(), $.post()...) sont &eacute;galement utilisable pour faire des appels ajax via le proxy. Consultez la documentation pour voir des exemples.": " Les function javascriptd suivantes sont &eacute;galement disponible: consoWidget_cmd(id,value); consoWidget_startScenario(id); consoWidget_stopScenario(id);. Les commandes jquery ($.get(), $.post()...) sont &eacute;galement utilisable pour faire des appels ajax via le proxy. Consultez la documentation pour voir des exemples.",
+        "Fr&eacute;quence de rafra&icirc;chissement": "Fr&eacute;quence de rafra&icirc;chissement",
+        "en secondes. 0 pour aucun rafra&icirc;chissement": "en secondes. 0 pour aucun rafra&icirc;chissement",
+        "Largeur": "Largeur",
+        "Hauteur": "Hauteur",
+        "Supprimer": "Supprimer",
+        "Sauvegarder": "Sauvegarder"
+    }
+}

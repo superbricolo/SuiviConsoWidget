@@ -1,0 +1,18 @@
+{
+	"id" : "consoWidget",
+	"name" : "Suivi Conso Widget",
+	"version": "0.1",
+	"licence" : "AGPL",
+	"author" : "Thibaut Trarbach",
+	"require" : "3.0",
+	"category" : "energy",
+	"hasDependency" : 0,
+	"hasOwnDeamon" : 0,
+	"changelog" : "https://mickeys27.github.io/Docs/conso/#language#/changelog",
+	"documentation" : "https://mickeys27.github.io/Docs/conso/#language#/",
+	"link" : {
+		"forum":"https://www.jeedom.com/forum/viewtopic.php?f=149&t=8500"
+	},
+	"language" : ["fr_FR"],
+	"compatibility" : ["miniplus","smart","rpi","docker","diy"]
+}
