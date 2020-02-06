@@ -14,7 +14,7 @@ $eqLogics = eqLogic::byType('consoWidget');
                 <div class="cursor eqLogicAction logoSecondary">
                     <a href="index.php?v=d&m=conso&p=conso"><img  style="margin-top:-32px;" src="plugins/conso/plugin_info/conso_icon.png" width="75" height="75" style="min-height:75px !important;" />
                     <br />
-                    <span>{{LienSuiviConso}}</span></a>
+                    <span>{{Suivi Conso}}</span></a>
                 </div>
 
                 <div class="cursor eqLogicAction logoPrimary" data-action="add">
@@ -28,7 +28,7 @@ $eqLogics = eqLogic::byType('consoWidget');
                     <span>{{Configuration}}</span>
                 </div>
             </div>
-        <legend><i class="fas fa-table"></i> {{Widget}}</legend>
+        <legend><i class="fas fa-table"></i> {{Suivi Conso Widget}}</legend>
         <input class="form-control" placeholder="{{Rechercher}}" id="in_searchEqlogic" />
         <div class="eqLogicThumbnailContainer">
         <?php
@@ -100,30 +100,30 @@ $eqLogics = eqLogic::byType('consoWidget');
                 <br/>
                 <br/>
 	            <div class="form-group">
-                    <label class="col-sm-3 control-label">{{Typeinfoelec}}</label>
+                    <label class="col-sm-3 control-label">{{Type De widget electrique}}</label>
                     <div class="col-sm-3">
                         <select id="consoWidget_type"  class="eqLogicAttr configuration form-control" data-l1key="configuration" data-l2key="type_consoWidget">
-                           <option value="1">{{elec1}}</option>
-                           <option value="2">{{elec2}}</option>
-                           <option value="3">{{elec3}}</option>
-                           <option value="4">{{elec4}}</option>
-                           <option value="5">{{elec5}}</option>
-                           <option value="6">{{elec6}}</option>
-                           <option value="7">{{elec7}}</option>
-                           <option value="8">{{elec8}}</option>
-                           <option value="9">{{elec9}}</option>
-                           <option value="10">{{elec10}}</option>
-                           <option value="11">{{elec11}}</option>
-                           <option value="12">{{elec12}}</option>
-                           <option value="13">{{elec13}}</option>
-                           <option value="14">{{elec14}}</option>
+                           <option value="1">{{Tableau Prix}}</option>
+                           <option value="2">{{Tableau Consomation}}</option>
+                           <option value="3">{{Gauge Puissance}}</option>
+                           <option value="4">{{Tableau Variation}}</option>
+                           <option value="5">{{Consomation Du Jours}}</option>
+                           <option value="6">{{Statistique}}</option>
+                           <option value="7">{{7 Derniers Jours}}</option>
+                           <option value="8">{{4 Dernière semaine}}</option>
+                           <option value="9">{{12 dernirs mois}}</option>
+                           <option value="10">{{7 Dernier jous Euro}}</option>
+                           <option value="11">{{4 dernière semaine Euro}}</option>
+                           <option value="12">{{12 derniers mois Euro}}</option>
+                           <option value="13">{{12 derrnièrs mois TTC}}</option>
+                           <option value="14">{{Degré jours unifié par ans}}</option>
                        </select>
                    </div>
                </div>
                <br/>
                <br/>
                <div class="form-group">
-                    <label class="col-sm-3 control-label">{{idequip}}</label>
+                    <label class="col-sm-3 control-label">{{Équipement Suivi Conso}}</label>
                     <div class="col-sm-3">
                         <select id="consoWidget_type"  class="eqLogicAttr configuration form-control" data-l1key="configuration" data-l2key="idequip">
                         <?php
