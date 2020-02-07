@@ -198,7 +198,7 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 
 			<div class="row">
 				<div id ="widget_currentBox">
-					<div id="currentBox" class="col-lg-8">
+					<div id="currentBox" class="col-lg-12">
 						<div class="widget">
 							<div class="widget-header">
 								<div class="col-lg-7" style="display:block">
