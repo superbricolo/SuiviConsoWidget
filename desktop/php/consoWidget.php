@@ -99,7 +99,26 @@ $eqLogics = eqLogic::byType('consoWidget');
                 </div>
                 <br/>
                 <br/>
-	            <div class="form-group">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">{{Équipement Suivi Conso}}</label>
+                    <div class="col-sm-3">
+                        <select id="consoWidget_type"  class="eqLogicAttr configuration form-control" data-l1key="configuration" data-l2key="idequip">
+                        <?php
+                            $eqLogicsconso = eqLogic::byType('conso');
+
+                            echo '<option selected value="">Non Config</option>';
+                            foreach ($eqLogicsconso as $eqLogic) {
+                                if ($eqLogic->getIsEnable() == 1) {
+                                    echo '<option value='.$eqLogic->getId().' >'.$eqLogic->getName().'</option>';
+                                }
+                            } 
+                        ?>
+                       </select>
+                   </div>
+               </div>
+               <br/>
+               <br/>
+               <div class="form-group">
                     <label class="col-sm-3 control-label">{{Type de widget}}</label>
                     <div class="col-sm-3">
                         <select id="consoWidget_type"  class="eqLogicAttr configuration form-control" data-l1key="configuration" data-l2key="type_consoWidget">
@@ -117,25 +136,6 @@ $eqLogics = eqLogic::byType('consoWidget');
                            <option value="12">{{12 derniers mois Euro}}</option>
                            <option value="13">{{12 derniers mois TTC}}</option>
                            <option value="14">{{Degré jour unifié par an}}</option>
-                       </select>
-                   </div>
-               </div>
-               <br/>
-               <br/>
-               <div class="form-group">
-                    <label class="col-sm-3 control-label">{{Équipement Suivi Conso}}</label>
-                    <div class="col-sm-3">
-                        <select id="consoWidget_type"  class="eqLogicAttr configuration form-control" data-l1key="configuration" data-l2key="idequip">
-                        <?php
-                            $eqLogicsconso = eqLogic::byType('conso');
-
-                            echo '<option selected value="">Non Config</option>';
-                            foreach ($eqLogicsconso as $eqLogic) {
-                                if ($eqLogic->getIsEnable() == 1) {
-                                    echo '<option value='.$eqLogic->getId().' >'.$eqLogic->getName().'</option>';
-                                }
-                            } 
-                        ?>
                        </select>
                    </div>
                </div>
