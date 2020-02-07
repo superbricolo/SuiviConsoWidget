@@ -1,8 +1,8 @@
 == Suivi Conso Widget
 
-=== Presentation
+=== Présentation
 
-Le plugin Conso Widget permet d'afficher les graphique de Suivi Conso dans le Dashboard ainsi que dans les disgne.
+Le plugin Conso Widget permet d'afficher les graphiques de Suivi Conso dans le Dashboard ainsi que dans les designs.
 
 Page de Configuration : 
 ![Screenshot](img/ConfigurationEquipement.png)
@@ -12,6 +12,6 @@ Exemple de graphique :
 
 === Configuration : 
 
-La configuration du plugin est extremement simple, vous avez qu'une seul chose a faire, Il vous suffit de vhoisir dans la page de configuration si votre acces externe est en https ou en http.
+La configuration du plugin est extrêmement simple, vous n'avez qu'une seule chose a faire, Il vous suffit de choisir dans la page de configuration si votre acces externe est en https ou en http.
 
 ![Screenshot](img/Configuration.png)
