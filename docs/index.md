@@ -8,7 +8,7 @@ Page de Configuration :
 ![Screenshot](img/ConfigurationEquipement.png)
 
 Exemple de graphique :
-![Screenshot](img/ConfigurationEquipement.png)
+![Screenshot](img/ExempleGraph.png)
 
 === Configuration : 
 
