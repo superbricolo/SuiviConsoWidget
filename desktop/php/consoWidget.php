@@ -139,17 +139,6 @@ $eqLogics = eqLogic::byType('consoWidget');
                        </select>
                    </div>
                </div>
-               <br/>
-               <br/>
-               <div class="form-group">
-                    <label class="col-sm-3 control-label">{{Protocole}}</label>
-                    <div class="col-sm-3">
-                        <select id="consoWidget_type"  class="eqLogicAttr configuration form-control" data-l1key="configuration" data-l2key="consowidget_protocole">
-                           <option value="0">{{Http}}</option>
-                           <option value="1">{{Https}}</option>
-                       </select>
-                   </div>
-               </div>
         </div>
 </div>
 

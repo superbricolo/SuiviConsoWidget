@@ -108,10 +108,19 @@ class consoWidget extends eqLogic {
 
 
 	public function getCode(){
-		if ($this->getConfiguration(consowidget_protocole) == 1) {
-			$code = '<iframe width="100%" height="100%" src="https://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>'; 
+
+		$ip = $_SERVER['HTTP_HOST'];
+		if (filter_var($ip, FILTER_VALIDATE_IP)) {
+			$code = '<div width="100%" height="10%">ICI HTTP IP : '. $_SERVER['HTTP_HOST'] .'</div>
+			<iframe width="100%" height="90%" src="http://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>';
 		} else {
-			$code = '<iframe width="100%" height="100%" src="http://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>';
+			if (config::byKey('ProtocoleURL', 'consoWidget') == 1) {
+				$code = '<div width="100%" height="10%">ICI HTTPS URL : '. $_SERVER['HTTP_HOST'] .'</div>
+				<iframe width="100%" height="90%" src="https://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>'; 
+			} else {
+				$code = '<div width="100%" height="10%">ICI HTTP URL : '. $_SERVER['HTTP_HOST'] .'</div>
+				<iframe width="100%" height="90%" src="http://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>';	
+			}
 		}
 				
 		preg_match_all("/#cmd([0-9]+)#/", $code, $matches, PREG_SET_ORDER);
