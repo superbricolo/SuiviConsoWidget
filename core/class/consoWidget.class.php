@@ -108,18 +108,25 @@ class consoWidget extends eqLogic {
 
 
 	public function getCode(){
-		$proxy = '/plugins/consoWidget/core/class/proxy/miniProxy.php?';
-		if($this->getConfiguration('proxify')){
-			$urlProxy = $proxy;
+
+		$ip = $_SERVER['HTTP_HOST'];
+		if (filter_var($ip, FILTER_VALIDATE_IP)) {
+			$code = '<div width="100%" height="10%">ICI HTTP IP : '. $_SERVER['HTTP_HOST'] .'</div>
+			<iframe width="100%" height="90%" src="http://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>';
+		} else {
+			if (config::byKey('ProtocoleURL', 'consoWidget') == 1) {
+				$code = '<div width="100%" height="10%">ICI HTTPS URL : '. $_SERVER['HTTP_HOST'] .'</div>
+				<iframe width="100%" height="90%" src="https://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>'; 
+			} else {
+				$code = '<div width="100%" height="10%">ICI HTTP URL : '. $_SERVER['HTTP_HOST'] .'</div>
+				<iframe width="100%" height="90%" src="http://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>';	
+			}
 		}
-		$code = $this->getConfiguration('type_consoWidget') == 'url' ?  '<iframe width="100%" height="100%" src="'.$urlProxy.$this->getConfiguration('consoWidget_code').'" frameborder="0"></iframe>' : $this->getConfiguration('consoWidget_code');
-		$code = str_replace('#timestamp#', time(), $code);
-		$code = str_replace('#proxy#', $proxy, $code);
+				
 		preg_match_all("/#cmd([0-9]+)#/", $code, $matches, PREG_SET_ORDER);
 		foreach($matches as $match){
 			$code = str_replace('#cmd'.$match[1].'#', cmd::byId($match[1])->toHtml(), $code);
-		}
-
+		}	
 		return $code;
 	}
 	
@@ -133,13 +140,8 @@ class consoWidget extends eqLogic {
 		$version = jeedom::versionAlias($_version);
 
 		$replace['#eqLogic_class#'] = 'eqLogic_layout_default';
-		/*$replace['#width#'] = $this->getDisplay('width', 'auto');
+		$replace['#width#'] = $this->getDisplay('width', 'auto');
 		$replace['#height#'] = $this->getDisplay('height', 'auto');
-		$replace['#name_display#'] = $this->getName();
-		$replace['#object_name#'] = '';
-		$replace['#eqLink#'] = $this->getLinkToConfiguration();
-		$replace['#uid#'] = 'eqLogic' . $this->getId() . self::UIDDELIMITER . mt_rand() . self::UIDDELIMITER;
-		*/
 		$replace['#cmd#'] = $this->toHtmlCmd($_version,  $replace['#background-color#'] == 'transparent');
 		$replace['#refresh_id#'] = $this->getCmd(null, 'Refresh')->getId();;
 		$replace['#timer#'] = ($this->getConfiguration('freq') > 0) ? 'setInterval(refresh'.$replace['#uid#'].','.$this->getConfiguration('freq').'000);' : '';
@@ -148,20 +150,12 @@ class consoWidget extends eqLogic {
 		return $this->postToHtml($_version, template_replace($replace, $templ));
 	}
 
-
-
-
-
-
-
-
-	 public function toHtmlCmd($_version = 'dashboard', $transparent = false) {
+	public function toHtmlCmd($_version = 'dashboard', $transparent = false) {
 		$top = $transparent ? 0 : 30;
 		return ' <div class="code" style="position:absolute; top:'.$top.'px;left:0px;right:0px;bottom:0px; width:100%; height:100%; background-color: white; color: black;">
 			'.$this->getCode().'
 			</div> ';
-	 }
-	 
+	}
 
 	public static function dependancy_info(){ 
 		log::add('consoWidget', 'debug','dependancy_info');
@@ -172,12 +166,6 @@ class consoWidget extends eqLogic {
 			if (!extension_loaded($requiredExtension)) {
 				$return['state'] = 'nok';
 				log::add('consoWidget', 'error','dependancy '.$requiredExtension.' is missing');
-			}
-		}
-		if(file_exists('/etc/apache2/sites-enabled/000-default.conf')){
-			if( strpos(file_get_contents('/etc/apache2/sites-enabled/000-default.conf'),'miniProxy.php') == false) {
-				$return['state'] = 'nok';
-				log::add('consoWidget', 'error','rewrite rule not installed is missing');
 			}
 		}
 		$return['log'] = 'consoWidget_update';
@@ -198,6 +186,7 @@ class consoWidget extends eqLogic {
 		$cmd .= ' > ' . log::getPathToLog('consoWidget_update') . ' 2>&1 &';
 		exec($cmd);
 	}
+
 }
 
 class consoWidgetCmd extends cmd {
@@ -227,7 +216,7 @@ class consoWidgetCmd extends cmd {
 
 	}
 
-
+	
 }
 
 ?>
