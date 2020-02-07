@@ -14,6 +14,9 @@
         "Catégorie": "Catégorie",
         "Activer": "Activer",
         "Visible": "Visible",
+        "Type de conso Widget": "Type de conso Widget",
+        "Supprimer": "Supprimer",
+        "Sauvegarder": "Sauvegarder",
         "Type de conso widget": "Type de conso widget",
         "Supprimer": "Supprimer",
         "Sauvegarder": "Sauvegarder",
@@ -21,8 +24,6 @@
         "Type de widget": "Type de widget",
         "Équipement Suivi Conso": "Équipement Suivi Conso",
         "Suivi Conso": "Suivi Conso",
-        "Automatique": "Automatique",
-        "Protocole si détection d'une URL ? : ": "Protocole si détection d'une URL ? : ",
 
         "Tableau prix":"Tableau prix",
         "Tableau consommation":"Tableau consommation",

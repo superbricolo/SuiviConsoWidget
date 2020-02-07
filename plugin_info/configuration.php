@@ -23,8 +23,14 @@
         die();
     }
 ?>
-
-
-<form class="form-horizontal">
-<hr>
-     
+<div class="form-group">
+    <label class="col-lg-4 control-label" >{{Protocole si détection d'une URL ? : }}</label>
+    <div class="col-lg-3">
+    <select id="sel_object" class="configKey form-control" data-l1key="ProtocoleURL">
+        <option value="0">{{Http}}</option>
+        <option value="1">{{Https}}</option>
+    </select>
+    </div>
+</div>
+</br>
+</br>
