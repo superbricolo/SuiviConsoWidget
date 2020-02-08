@@ -17,11 +17,14 @@
 
 
 $('header').hide();
+$('footer').hide();
 $('#div_mainContainer').css('margin-top', '-50px');
+$('#wrap').css('margin-bottom', '0px');
 $('.backgroundforJeedom').css('margin-top', '-50px').css('height','100%');
 document.getElementById("menu").style.display = "none";
 
 // Hide All Widget
+
 document.getElementById("widget_tableau_prix").style.display = "none";
 document.getElementById("widget_Consobox").style.display = "none";
 document.getElementById("widget_gauge").style.display = "none";

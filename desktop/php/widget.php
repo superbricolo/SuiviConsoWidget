@@ -142,6 +142,8 @@ include_file('desktop', 'statistique/periode/panel_graph_periode', 'js', 'conso'
 include_file('desktop', 'statistique/synthese/panel_graph_synthese', 'js', 'conso');
 include_file('3rdparty', 'jqueryflip/jquery.flip.min', 'js', 'conso');
 include_file('desktop', 'widget', 'js', 'consoWidget');
-//include_file('desktop', 'statistique', 'js', 'conso');
-
 ?>
+
+<script type="text/javascript">
+	setTimeout(() => { document.getElementById("conso_dashboard").style.overflow = "visible"; }, 1000);
+</script>
