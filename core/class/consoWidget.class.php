@@ -108,17 +108,20 @@ class consoWidget extends eqLogic {
 
 
 	public function getCode(){
-
+		$debugConf = '';
 		$ip = $_SERVER['HTTP_HOST'];
 		if (filter_var($ip, FILTER_VALIDATE_IP)) {
-			$code = '<div width="100%" height="10%">ICI HTTP IP : '. $_SERVER['HTTP_HOST'] .'</div>
+			if (config::byKey('modeDebug', 'consoWidget') == 1) {$debugConf = 'DEBUG : http://'. $_SERVER['HTTP_HOST'].'/';}
+			$code = '<div width="100%" height="10%">'. $debugConf .'</div>
 			<iframe width="100%" height="90%" src="http://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>';
 		} else {
 			if (config::byKey('ProtocoleURL', 'consoWidget') == 1) {
-				$code = '<div width="100%" height="10%">ICI HTTPS URL : '. $_SERVER['HTTP_HOST'] .'</div>
+				if (config::byKey('modeDebug', 'consoWidget') == 1) {$debugConf = 'DEBUG : https://'. $_SERVER['HTTP_HOST'].'/';}
+				$code = '<div width="100%" height="10%">'. $debugConf .'</div>
 				<iframe width="100%" height="90%" src="https://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>'; 
 			} else {
-				$code = '<div width="100%" height="10%">ICI HTTP URL : '. $_SERVER['HTTP_HOST'] .'</div>
+				if (config::byKey('modeDebug', 'consoWidget') ==1) {$debugConf = 'DEBUG : http://'. $_SERVER['HTTP_HOST'].'/';}
+				$code = '<div width="100%" height="10%">'. $debugConf .'</div>
 				<iframe width="100%" height="90%" src="http://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>';	
 			}
 		}
