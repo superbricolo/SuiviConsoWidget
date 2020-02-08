@@ -156,37 +156,6 @@ class consoWidget extends eqLogic {
 			'.$this->getCode().'
 			</div> ';
 	}
-
-	public static function dependancy_info(){ 
-		log::add('consoWidget', 'debug','dependancy_info');
-		$return = array();
-		$return['state'] = 'ok';
-		$requiredExtensions = ['curl', 'mbstring'];
-		foreach($requiredExtensions as $requiredExtension) {
-			if (!extension_loaded($requiredExtension)) {
-				$return['state'] = 'nok';
-				log::add('consoWidget', 'error','dependancy '.$requiredExtension.' is missing');
-			}
-		}
-		$return['log'] = 'consoWidget_update';
-		$return['progress_file'] = '/tmp/compilation_consoWidget_in_progress';
-		log::add('consoWidget', 'debug','dependancy_info2');
-		if(file_exists('/var/www/html/log/consoWidget_update') && file_exists('/tmp/compilation_consoWidget_in_progress')){
-		log::add('consoWidget', 'debug','dependancy_info3');
-			exec('sudo bash -c "cat /var/www/html/log/consoWidget_update |grep -v "Preparing" | wc -l > /tmp/compilation_consoWidget_in_progress"');
-		}	
-		return $return;
-	}
-	public static function dependancy_install() {
-		if (file_exists('/tmp/compilation_consoWidget_in_progress')) {
-			return;
-		}
-		log::remove('consoWidget_update');
-		$cmd = 'sudo /bin/bash ' . dirname(__FILE__) . '/../install.sh';
-		$cmd .= ' > ' . log::getPathToLog('consoWidget_update') . ' 2>&1 &';
-		exec($cmd);
-	}
-
 }
 
 class consoWidgetCmd extends cmd {
