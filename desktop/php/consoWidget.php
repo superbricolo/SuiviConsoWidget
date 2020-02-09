@@ -144,7 +144,6 @@ $eqLogics = eqLogic::byType('consoWidget');
                        </select>
                    </div>
                </div>
-
         </div>
 </div>
 
