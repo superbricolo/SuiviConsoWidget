@@ -507,6 +507,26 @@ echo '<div  class="" id="conso_dashboard" style="height:100%;">
 						</div>
 					</div>
 				</div>
+				<div id="WidgetError">
+					<div id="ERROR" class="">
+						<div class="widget">
+							<div class="widget-header">
+								<i class="icon-bar-chart"></i>
+								<h3>Erreur, aucun équipement choisi</h3>
+								<span class="datesynchro"></span>
+							</div>
+							<div style="height:340px;" class="widget-content">
+								<div class="shortcuts" >
+									<div class="box-body no-padding">
+									Vous n\'avez pas configuré d\'équipement Suivi-conso dans la configuration du widget.
+
+									Pour le configurer rendez-vous dans la page de configuration de l\'équipement et choisissez un équipement de suivie conso.
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>';

@@ -101,6 +101,7 @@ sendVarToJS('type_abo', $type_abo);
 sendVarToJS('display', $display);
 sendVarToJS('type', $type);
 sendVarToJS('widgetId', $id=$_GET["widget"]);
+sendVarToJS('idequipement', $_GET["id"]);
 ?>
 	<div id="menu">
 		<select id="conso_ecq">
