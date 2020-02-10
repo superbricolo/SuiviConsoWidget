@@ -119,19 +119,23 @@ class consoWidget extends eqLogic {
 				$code = ' <iframe width="100%" height="100%" src="http://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>';
 			};
 		} else {
+			$external = "";
+			if (config::byKey('externalComplement', 'core') != ""){
+				$external = '/'.config::byKey('externalComplement', 'core');
+			}
 			if (config::byKey('ProtocoleURL', 'consoWidget') == 1) {
 				if (config::byKey('modeDebug', 'consoWidget') == 1) {
-					$code = '<div width="100%" height="10%" style="background-color: #262626; color: #acacac;">           DEBUG : https://'. $_SERVER['HTTP_HOST'].'/</div>
-					<iframe width="100%" height="90%" src="https://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>';
+					$code = '<div width="100%" height="10%" style="background-color: #262626; color: #acacac;">           DEBUG : https://'. $_SERVER['HTTP_HOST'].$external.'</div>
+					<iframe width="100%" height="90%" src="https://'.$_SERVER['HTTP_HOST'].$external.'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>';
 				} else {
-					$code = ' <iframe width="100%" height="100%" src="https://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>';
+					$code = ' <iframe width="100%" height="100%" src="https://'.$_SERVER['HTTP_HOST'].$external.'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>';
 				};
 			} else {
 				if (config::byKey('modeDebug', 'consoWidget') == 1) {
-					$code = '<div width="100%" height="10%" style="background-color: #262626; color: #acacac;">           DEBUG : http://'. $_SERVER['HTTP_HOST'].'/</div>
-					<iframe width="100%" height="90%" src="http://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>';
+					$code = '<div width="100%" height="10%" style="background-color: #262626; color: #acacac;">           DEBUG : http://'. $_SERVER['HTTP_HOST'].$external.'/</div>
+					<iframe width="100%" height="90%" src="http://'.$_SERVER['HTTP_HOST'].$external.'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>';
 				} else {
-					$code = ' <iframe width="100%" height="100%" src="http://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>';
+					$code = ' <iframe width="100%" height="100%" src="http://'.$_SERVER['HTTP_HOST'].$external.'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>';
 				};
 			}
 		}
