@@ -16,4 +16,4 @@ La configuration du plugin est extrêmement simple, vous n'avez qu'une seule cho
 
 ![Screenshot](img/Configuration.png)
 
-# Le plugin ne fonctionnera pas sans sa dependance principale qui est le plugin suivi conso lui même
+# Le plugin ne fonctionnera pas sans sa dependance principale qui est le plugin Suivi Conso lui même
