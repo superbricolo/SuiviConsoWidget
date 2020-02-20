@@ -34,3 +34,9 @@
 </div>
 </br>
 </br>
+<div class="form-group">
+    <label class="col-lg-4 control-label" >{{Mode Debug : }}</label>
+    <div class="col-lg-3">
+        <input type="checkbox" class="configKey" data-l1key="modeDebug">
+    </div>
+</div>

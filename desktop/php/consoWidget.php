@@ -127,7 +127,12 @@ $eqLogics = eqLogic::byType('consoWidget');
                            <option value="3">{{Gauge puissance}}</option>
                            <option value="4">{{Tableau variation}}</option>
                            <option value="5">{{Consommation du jour}}</option>
-                           <option value="6">{{Statistiques}}</option>
+                           <?php
+                                $eqLogicsconso = eqLogic::byType('conso');
+                                if(count($eqLogicsconso) > 1) {
+                                    echo '<option value="6">{{Statistiques}}</option>';
+                                }
+                            ?>
                            <option value="7">{{7 derniers jours}}</option>
                            <option value="8">{{4 dernières semaines}}</option>
                            <option value="9">{{12 derniers mois}}</option>

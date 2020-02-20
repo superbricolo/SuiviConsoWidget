@@ -108,18 +108,35 @@ class consoWidget extends eqLogic {
 
 
 	public function getCode(){
-
+		$debugConf = '';
 		$ip = $_SERVER['HTTP_HOST'];
+		$code = '';
 		if (filter_var($ip, FILTER_VALIDATE_IP)) {
-			$code = '<div width="100%" height="10%">ICI HTTP IP : '. $_SERVER['HTTP_HOST'] .'</div>
-			<iframe width="100%" height="90%" src="http://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>';
-		} else {
-			if (config::byKey('ProtocoleURL', 'consoWidget') == 1) {
-				$code = '<div width="100%" height="10%">ICI HTTPS URL : '. $_SERVER['HTTP_HOST'] .'</div>
-				<iframe width="100%" height="90%" src="https://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>'; 
+			if (config::byKey('modeDebug', 'consoWidget') == 1) {
+				$code = '<div width="100%" height="10%" style="background-color: #262626; color: #acacac;">           DEBUG : http://'. $_SERVER['HTTP_HOST'].'/</div>
+				<iframe width="100%" height="90%" src="http://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>';
 			} else {
-				$code = '<div width="100%" height="10%">ICI HTTP URL : '. $_SERVER['HTTP_HOST'] .'</div>
-				<iframe width="100%" height="90%" src="http://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>';	
+				$code = ' <iframe width="100%" height="100%" src="http://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>';
+			};
+		} else {
+			$external = "";
+			if (config::byKey('externalComplement', 'core') != ""){
+				$external = '/'.config::byKey('externalComplement', 'core');
+			}
+			if (config::byKey('ProtocoleURL', 'consoWidget') == 1) {
+				if (config::byKey('modeDebug', 'consoWidget') == 1) {
+					$code = '<div width="100%" height="10%" style="background-color: #262626; color: #acacac;">           DEBUG : https://'. $_SERVER['HTTP_HOST'].$external.'</div>
+					<iframe width="100%" height="90%" src="https://'.$_SERVER['HTTP_HOST'].$external.'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>';
+				} else {
+					$code = ' <iframe width="100%" height="100%" src="https://'.$_SERVER['HTTP_HOST'].$external.'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>';
+				};
+			} else {
+				if (config::byKey('modeDebug', 'consoWidget') == 1) {
+					$code = '<div width="100%" height="10%" style="background-color: #262626; color: #acacac;">           DEBUG : http://'. $_SERVER['HTTP_HOST'].$external.'/</div>
+					<iframe width="100%" height="90%" src="http://'.$_SERVER['HTTP_HOST'].$external.'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>';
+				} else {
+					$code = ' <iframe width="100%" height="100%" src="http://'.$_SERVER['HTTP_HOST'].$external.'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>';
+				};
 			}
 		}
 				
@@ -156,37 +173,6 @@ class consoWidget extends eqLogic {
 			'.$this->getCode().'
 			</div> ';
 	}
-
-	public static function dependancy_info(){ 
-		log::add('consoWidget', 'debug','dependancy_info');
-		$return = array();
-		$return['state'] = 'ok';
-		$requiredExtensions = ['curl', 'mbstring'];
-		foreach($requiredExtensions as $requiredExtension) {
-			if (!extension_loaded($requiredExtension)) {
-				$return['state'] = 'nok';
-				log::add('consoWidget', 'error','dependancy '.$requiredExtension.' is missing');
-			}
-		}
-		$return['log'] = 'consoWidget_update';
-		$return['progress_file'] = '/tmp/compilation_consoWidget_in_progress';
-		log::add('consoWidget', 'debug','dependancy_info2');
-		if(file_exists('/var/www/html/log/consoWidget_update') && file_exists('/tmp/compilation_consoWidget_in_progress')){
-		log::add('consoWidget', 'debug','dependancy_info3');
-			exec('sudo bash -c "cat /var/www/html/log/consoWidget_update |grep -v "Preparing" | wc -l > /tmp/compilation_consoWidget_in_progress"');
-		}	
-		return $return;
-	}
-	public static function dependancy_install() {
-		if (file_exists('/tmp/compilation_consoWidget_in_progress')) {
-			return;
-		}
-		log::remove('consoWidget_update');
-		$cmd = 'sudo /bin/bash ' . dirname(__FILE__) . '/../install.sh';
-		$cmd .= ' > ' . log::getPathToLog('consoWidget_update') . ' 2>&1 &';
-		exec($cmd);
-	}
-
 }
 
 class consoWidgetCmd extends cmd {

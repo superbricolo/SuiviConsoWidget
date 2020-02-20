@@ -8,8 +8,8 @@
 	"category" : "energy",
 	"hasDependency" : 0,
 	"hasOwnDeamon" : 0,
-	"changelog" : "https://mickeys27.github.io/Docs/conso/#language#/changelog",
-	"documentation" : "https://mickeys27.github.io/Docs/conso/#language#/",
+	"changelog" : "https://trmaud.github.io/SuiviConsoWidget/changelog",
+	"documentation" : "https://trmaud.github.io/SuiviConsoWidget/",
 	"link" : {
 		"forum":"https://community.jeedom.com/t/plugin-suivi-conso-debuggage/"
 	},

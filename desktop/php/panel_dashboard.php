@@ -1,12 +1,12 @@
 <?php
 
 
-echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
+echo '<div  class="" id="conso_dashboard" style="height:100%;">
 		<div id="div_DashboardAlert" style="display: none;"></div>
 
 		<div class="span6">
 			<div class="row">
-				<div class="col-lg-4" id="widget_tableau_prix">
+				<div class="" id="widget_tableau_prix">
 					<div class="widget flip" id="tableau_prix">
 					<div class="card">
 						<div class="face front">
@@ -61,7 +61,7 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 					</div>
 				</div>
 
-				<div class="col-lg-4" id="widget_Consobox">
+				<div class="" id="widget_Consobox">
 					<div class="row">
 						<div style="display:none" id="Consobox" class="TableauBox widget flip"></div>
 						<div style="display:none" id="previsionbox" class="TableauBox widget flip">
@@ -160,7 +160,7 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 					</div>
 				</div>
 				<div id="widget_gauge">
-					<div id="widgetgauge" class="col-lg-2">
+					<div id="widgetgauge" class="">
 						<div class="widget">
 							<div class="widget-header">
 								<i class="icon-bolt"></i>
@@ -178,7 +178,7 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 						</div>
 					</div>
 				</div>
-			    <div class="col-lg-2" id="widget_variation">
+			    <div class="" id="widget_variation">
 					<div class="widget">
 						<div class="widget-header">
 							<i class="icon-list-alt"></i>
@@ -198,7 +198,7 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 
 			<div class="row">
 				<div id ="widget_currentBox">
-					<div id="currentBox" class="col-lg-8">
+					<div id="currentBox" class="">
 						<div class="widget">
 							<div class="widget-header">
 								<div class="col-lg-7" style="display:block">
@@ -249,7 +249,7 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 			</div>
 			<!-- ligne 2 -->
 			<div class="row">
-			    <div class="col-lg-4" id="widget_Temp7jBox">
+			    <div class="" id="widget_Temp7jBox">
 					<div class="flip widget">
 						<div class="card">
 							<div class="face front">
@@ -286,7 +286,7 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 					</div>
 				</div>
 
-			    <div class="col-lg-4" id="widget_Temp4sBox">
+			    <div class="" id="widget_Temp4sBox">
 					<div class="flip widget">
 						<div class="card">
 							<div class="face front">
@@ -323,7 +323,7 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 					</div>
 				</div>
 
-			    <div class="col-lg-4" id="widget_Temp12mBox">
+			    <div class="" id="widget_Temp12mBox">
 					<div class="flip widget">
 						<div class="card">
 							<div class="face front">
@@ -362,7 +362,7 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 			</div>
 			<!-- ligne 3 -->
 			<div class="row">
-				<div class=" col-lg-4" id="widget_DJU7jBox">
+				<div class="" id="widget_DJU7jBox">
 					<div class="flip widget">
 						<div class="card">
 							<div class="face front">
@@ -398,7 +398,7 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 						</div>
 					</div>
 			    </div>
-				<div class=" col-lg-4" id="widget_DJU4sBox">
+				<div class="" id="widget_DJU4sBox">
 					<div class="flip widget">
 						<div class="card">
 							<div class="face front">
@@ -434,7 +434,7 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 						</div>
 					</div>
 			    </div>
-				<div class=" col-lg-4" id="widget_DJU12mBox">
+				<div class="" id="widget_DJU12mBox">
 					<div class="flip widget">
 						<div class="card">
 							<div class="face front">
@@ -473,7 +473,7 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 			</div>
 
 			<div class="row">
-			    <div class="col-lg-6" id="widget_YearTaxe">
+			    <div class="" id="widget_YearTaxe">
 			    	<div class="widget">
 						<div class="widget-header">
 							<i class="icon-bar-chart"></i>
@@ -490,7 +490,7 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 					</div>
 			    </div>
 				<div id="widget_DJUBox">
-					<div id="DJUBox" class="col-lg-6">
+					<div id="DJUBox" class="">
 						<div class="widget">
 							<div class="widget-header">
 								<i class="icon-bar-chart"></i>
@@ -501,6 +501,26 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 								<div class="shortcuts" >
 									<div class="box-body no-padding">
 										<div class="chart" id="DJUYear" style="height:300px;"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="WidgetError">
+					<div id="ERROR" class="">
+						<div class="widget">
+							<div class="widget-header">
+								<i class="icon-bar-chart"></i>
+								<h3>Erreur, aucun équipement choisi</h3>
+								<span class="datesynchro"></span>
+							</div>
+							<div style="height:340px;" class="widget-content">
+								<div class="shortcuts" >
+									<div class="box-body no-padding">
+									Vous n\'avez pas configuré d\'équipement Suivi-conso dans la configuration du widget.
+
+									Pour le configurer rendez-vous dans la page de configuration de l\'équipement et choisissez un équipement de suivie conso.
 									</div>
 								</div>
 							</div>
