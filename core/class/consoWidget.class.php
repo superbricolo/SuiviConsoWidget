@@ -159,7 +159,7 @@ class consoWidget extends eqLogic {
 		$replace['#eqLogic_class#'] = 'eqLogic_layout_default';
 		$replace['#width#'] = $this->getDisplay('width', 'auto');
 		$replace['#height#'] = $this->getDisplay('height', 'auto');
-		$replace['#cmd#'] = $this->toHtmlCmd($_version,  $replace['#background-color#'] == 'transparent');
+		$replace['#cmd#'] = $this->toHtmlCmd($_version,  false);
 		$replace['#refresh_id#'] = $this->getCmd(null, 'Refresh')->getId();;
 		$replace['#timer#'] = ($this->getConfiguration('freq') > 0) ? 'setInterval(refresh'.$replace['#uid#'].','.$this->getConfiguration('freq').'000);' : '';
 			//$templ = getTemplate('core', $version, 'eqLogic');
