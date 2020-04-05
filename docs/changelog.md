@@ -1,4 +1,5 @@
-V0.5.1 (05/04/2020)
+V0.6 
+    (05/04/2020)
     Correction d'une erreur sur php 7.3
 
 V0.5
