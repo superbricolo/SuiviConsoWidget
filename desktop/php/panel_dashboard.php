@@ -10,7 +10,7 @@ echo '<div  class="" id="conso_dashboard" style="height:100%;">
 					<div class="widget flip" id="tableau_prix">
 					<div class="card">
 						<div class="face front">
-						<img class="icon_flip" src="plugins/conso/plugin_info/theme/img/elec.png" title="Voir la consommation">
+						<img class="icon_flip" src="plugins/conso/desktop/css/theme/img/elec.png" title="Voir la consommation">
 						<div class="widget-header">
 							<i class="icon-money"></i>
 							<h3>Prix</h3>
@@ -34,7 +34,7 @@ echo '<div  class="" id="conso_dashboard" style="height:100%;">
 						</div>
 					</div>
 					<div class="face back">
-						<img class="icon_flip" src="plugins/conso/plugin_info/theme/img/euro.png" title="Voir le coût">
+						<img class="icon_flip" src="plugins/conso/desktop/css/theme/img/euro.png" title="Voir le coût">
 						<div class="widget-header">
 							<i class="icon-money"></i>
 							<h3>Consommation</h3>
@@ -76,7 +76,7 @@ echo '<div  class="" id="conso_dashboard" style="height:100%;">
 										<div id="content_prevision" style="height:240px;" class="widget-content">
 											<div class=" prevision col-lg-12">
 												<div class="previsionbox nopadding col-lg-2">
-													<img id="imgcharge" class="img_charge" src="plugins/conso/plugin_info/theme/img/charge/charge.png" title="">
+													<img id="imgcharge" class="img_charge" src="plugins/conso/desktop/css/theme/img/charge/charge.png" title="">
 												</div>
 												<div class="col-lg-4 statcharge">
 														<div id="consomme_contener">Consommé : <span id="consomme" class="pre_value"></span></div>
@@ -92,7 +92,7 @@ echo '<div  class="" id="conso_dashboard" style="height:100%;">
 											<div class="row">
 												<div class=" previsionyear col-lg-12">
 													<div class="nopadding col-lg-2">
-														<img id="imgcharge_year" class="img_charge" src="plugins/conso/plugin_info/theme/img/charge/charge.png" title="">
+														<img id="imgcharge_year" class="img_charge" src="plugins/conso/desktop/css/theme/img/charge/charge.png" title="">
 													</div>
 													<div class="col-lg-4 statcharge ">
 															<div id="consomme_contener_year">Consommé : <span id="consomme_year" class="pre_value"></span></div>
@@ -253,7 +253,7 @@ echo '<div  class="" id="conso_dashboard" style="height:100%;">
 					<div class="flip widget">
 						<div class="card">
 							<div class="face front">
-								<img id="Temp7jBox" class="icon_flip" src="plugins/conso/plugin_info/theme/img/temp.png" title="Voir les températures de cette période">
+								<img id="Temp7jBox" class="icon_flip" src="plugins/conso/desktop/css/theme/img/temp.png" title="Voir les températures de cette période">
 								<div class="widget-header">
 									<i class="icon-bar-chart"></i>
 									<h3>7 derniers jours</h3>
@@ -268,7 +268,7 @@ echo '<div  class="" id="conso_dashboard" style="height:100%;">
 								</div>
 							</div>
 							<div class="face back">
-								<img class="icon_flip" src="plugins/conso/plugin_info/theme/img/elec.png" title="Voir la consommation de cette période">
+								<img class="icon_flip" src="plugins/conso/desktop/css/theme/img/elec.png" title="Voir la consommation de cette période">
 								<div class="widget-header">
 									<i class="icon-bar-chart"></i>
 									<h3>Température 7 derniers jours</h3>
@@ -290,7 +290,7 @@ echo '<div  class="" id="conso_dashboard" style="height:100%;">
 					<div class="flip widget">
 						<div class="card">
 							<div class="face front">
-								<img id="Temp4sBox" class="icon_flip" src="plugins/conso/plugin_info/theme/img/temp.png" title="Voir les températures de cette période">
+								<img id="Temp4sBox" class="icon_flip" src="plugins/conso/desktop/css/theme/img/temp.png" title="Voir les températures de cette période">
 								<div class="widget-header">
 									<i class="icon-bar-chart"></i>
 									<h3>4 dernières semaines</h3>
@@ -305,7 +305,7 @@ echo '<div  class="" id="conso_dashboard" style="height:100%;">
 								</div>
 							</div>
 							<div class="face back">
-								<img class="icon_flip" src="plugins/conso/plugin_info/theme/img/elec.png" title="Voir la consommation de cette période">
+								<img class="icon_flip" src="plugins/conso/desktop/css/theme/img/elec.png" title="Voir la consommation de cette période">
 								<div class="widget-header">
 									<i class="icon-bar-chart"></i>
 									<h3>Température 4 dernières semaines</h3>
@@ -327,7 +327,7 @@ echo '<div  class="" id="conso_dashboard" style="height:100%;">
 					<div class="flip widget">
 						<div class="card">
 							<div class="face front">
-								<img id="Temp12mBox" class="icon_flip" src="plugins/conso/plugin_info/theme/img/temp.png" title="Voir les températures de cette période">
+								<img id="Temp12mBox" class="icon_flip" src="plugins/conso/desktop/css/theme/img/temp.png" title="Voir les températures de cette période">
 								<div class="widget-header">
 									<i class="icon-bar-chart"></i>
 									<h3>12 derniers mois</h3>
@@ -342,7 +342,7 @@ echo '<div  class="" id="conso_dashboard" style="height:100%;">
 								</div>
 							</div>
 							<div class="face back">
-								<img class="icon_flip" src="plugins/conso/plugin_info/theme/img/elec.png" title="Voir la consommation de cette période">
+								<img class="icon_flip" src="plugins/conso/desktop/css/theme/img/elec.png" title="Voir la consommation de cette période">
 								<div class="widget-header">
 									<i class="icon-bar-chart"></i>
 									<h3>Température 12 derniers mois</h3>
@@ -366,7 +366,7 @@ echo '<div  class="" id="conso_dashboard" style="height:100%;">
 					<div class="flip widget">
 						<div class="card">
 							<div class="face front">
-								<img id="DJU7jBox" class="icon_flip" src="plugins/conso/plugin_info/theme/img/dju.png" title="Voir les DJU  de cette période">
+								<img id="DJU7jBox" class="icon_flip" src="plugins/conso/desktop/css/theme/img/dju.png" title="Voir les DJU  de cette période">
 								<div class="widget-header">
 									<i class="icon-bar-chart"></i>
 									<h3>7 derniers jours en '.config::byKey('Devise', 'conso').'</h3>
@@ -381,7 +381,7 @@ echo '<div  class="" id="conso_dashboard" style="height:100%;">
 								</div>
 							</div>
 							<div class="face back">
-								<img class="icon_flip" src="plugins/conso/plugin_info/theme/img/euro.png" title="Voir  la consommation de cette période">
+								<img class="icon_flip" src="plugins/conso/desktop/css/theme/img/euro.png" title="Voir  la consommation de cette période">
 								<div class="widget-header">
 									<i class="icon-bar-chart"></i>
 									<h3>DJU des 7 derniers jours</h3>
@@ -402,7 +402,7 @@ echo '<div  class="" id="conso_dashboard" style="height:100%;">
 					<div class="flip widget">
 						<div class="card">
 							<div class="face front">
-									<img id="DJU4sBox" class="icon_flip" src="plugins/conso/plugin_info/theme/img/dju.png" title="Voir les DJU de cette période ">
+									<img id="DJU4sBox" class="icon_flip" src="plugins/conso/desktop/css/theme/img/dju.png" title="Voir les DJU de cette période ">
 									<div class="widget-header">
 										<i class="icon-bar-chart"></i>
 										<h3>4 dernières semaines en '.config::byKey('Devise', 'conso').'</h3>
@@ -417,7 +417,7 @@ echo '<div  class="" id="conso_dashboard" style="height:100%;">
 								</div>
 							</div>
 							<div class="face back">
-								<img class="icon_flip" src="plugins/conso/plugin_info/theme/img/euro.png" title="Voir la consommation de cette période">
+								<img class="icon_flip" src="plugins/conso/desktop/css/theme/img/euro.png" title="Voir la consommation de cette période">
 								<div class="widget-header">
 									<i class="icon-bar-chart"></i>
 									<h3>DJU des 4 dernières semaines</h3>
@@ -438,7 +438,7 @@ echo '<div  class="" id="conso_dashboard" style="height:100%;">
 					<div class="flip widget">
 						<div class="card">
 							<div class="face front">
-								<img id="DJU12mBox" class="icon_flip" src="plugins/conso/plugin_info/theme/img/dju.png" title="Voir les DJU de cette période">
+								<img id="DJU12mBox" class="icon_flip" src="plugins/conso/desktop/css/theme/img/dju.png" title="Voir les DJU de cette période">
 								<div class="widget-header">
 									<i class="icon-bar-chart"></i>
 									<h3>12 derniers mois en '.config::byKey('Devise', 'conso').'</h3>
@@ -453,7 +453,7 @@ echo '<div  class="" id="conso_dashboard" style="height:100%;">
 								</div>
 							</div>
 							<div class="face back">
-								<img class="icon_flip" src="plugins/conso/plugin_info/theme/img/euro.png" title="Voir la consommation de cette période">
+								<img class="icon_flip" src="plugins/conso/desktop/css/theme/img/euro.png" title="Voir la consommation de cette période">
 								<div class="widget-header">
 									<i class="icon-bar-chart"></i>
 									<h3>DJU des 12 derniers mois</h3>

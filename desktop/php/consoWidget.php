@@ -35,7 +35,7 @@ $eqLogics = eqLogic::byType('consoWidget');
             foreach ($eqLogics as $eqLogic) {
                 $opacity = ($eqLogic->getIsEnable()) ? '' : 'disableCard';
                 echo '<div class="eqLogicDisplayCard cursor '.$opacity.'" data-eqLogic_id="' . $eqLogic->getId() . '">';
-                echo '<img src="plugins/consoWidget/plugin_info//consoWidget_icon.png"/>';
+                echo '<img src="plugins/consoWidget/plugin_info/consoWidget_icon.png"/>';
                 echo '<br>';
                 echo '<span class="name">' . $eqLogic->getHumanName(true, true) . '</span>';
                 echo '</div>';
@@ -111,7 +111,7 @@ $eqLogics = eqLogic::byType('consoWidget');
                                 if ($eqLogic->getIsEnable() == 1) {
                                     echo '<option value='.$eqLogic->getId().' >'.$eqLogic->getName().'</option>';
                                 }
-                            } 
+                            }
                         ?>
                        </select>
                    </div>

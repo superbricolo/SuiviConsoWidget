@@ -27,10 +27,10 @@ include_file('3rdparty', 'datatable/datatable', 'css', 'conso');
 include_file('desktop', 'ionicons', 'css', 'conso');
 include_file('desktop', 'panel', 'css', 'conso');
 /*Theme*/
-include_file('plugin_info/theme', 'style', 'css', 'conso');
-include_file('plugin_info/theme', 'font-awesome', 'css', 'conso');
+include_file('desktop/css/theme', 'style', 'css', 'conso');
+include_file('desktop/css/theme', 'font-awesome', 'css', 'conso');
 
-/* Set Variable Thème couleur Jeedom*/ 
+/* Set Variable Thème couleur Jeedom*/
 $versionjeedom = "V0";
 if (jeedom::version() < "4.0.0") {
 	//echo "V3";
@@ -118,10 +118,11 @@ sendVarToJS('idequipement', $_GET["id"]);
 		<?php
 
 		include_once("panel_dashboard.php");
-		include_once(__DIR__."/../../../conso/desktop/php/panel_temperature.php");
-		include_once(__DIR__."/../../../conso/desktop/php/statistique/periode/panel_graph_periode.php");
-		include_once(__DIR__."/../../../conso/desktop/php/statistique/categorie/panel_graph_categorie.php");
-		include_once(__DIR__."/../../../conso/desktop/php/statistique/synthese/panel_graph_synthese.php");
+		include_once(__DIR__."/../../../conso/core/php/panel_temperature.php");
+		include_once(__DIR__."/../../../conso/core/class/conso_panel.class.php");
+		//include_once(__DIR__."/../../../conso/desktop/php/statistique/periode/panel_graph_periode.php");
+		//include_once(__DIR__."/../../../conso/desktop/php/statistique/categorie/panel_graph_categorie.php");
+		//include_once(__DIR__."/../../../conso/desktop/php/statistique/synthese/panel_graph_synthese.php");
 		//include_once("conso.php");
 
 		?>
