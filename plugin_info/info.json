@@ -14,5 +14,5 @@
 		"forum":"https://community.jeedom.com/t/plugin-suivi-conso-debuggage/"
 	},
 	"language" : ["fr_FR"],
-	"compatibility" : ["miniplus","smart","rpi","docker","diy"]
+	"compatibility" : ["miniplus","smart","rpi","docker","diy","v4"]
 }
