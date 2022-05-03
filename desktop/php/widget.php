@@ -32,6 +32,7 @@ include_file('desktop/css/theme', 'font-awesome', 'css', 'conso');
 
 /* Set Variable Thème couleur Jeedom*/
 $versionjeedom = "V0";
+$versionplugin = "V3.19";
 if (jeedom::version() < "4.0.0") {
 	//echo "V3";
 	$versionjeedom = "V3";
@@ -58,6 +59,7 @@ if (jeedom::version() < "4.0.0") {
 /*Thème*/
 sendVarToJS('stylecss', 'cssdefault');
 sendVarToJS('versiontheme',$versionjeedom);
+sendVarToJS('versionplugin',$versionplugin);
 /*Devise*/
 sendVarToJS('Devise', config::byKey('Devise', 'conso'));
 /*Get timeZone*/
