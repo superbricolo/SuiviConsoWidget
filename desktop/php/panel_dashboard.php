@@ -198,7 +198,7 @@ echo '<div  class="" id="conso_dashboard" style="height:100%;">
 
 			<div class="row">
 				<div id ="widget_currentBox">
-					<div id="currentBox" class="">
+					<div id="currentBox" class="col-lg-8">
 						<div class="widget">
 							<div class="widget-header">
 								<div class="col-lg-7" style="display:block">
@@ -501,6 +501,80 @@ echo '<div  class="" id="conso_dashboard" style="height:100%;">
 								<div class="shortcuts" >
 									<div class="box-body no-padding">
 										<div class="chart" id="DJUYear" style="height:300px;"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+			    <div class="col-lg-6" id="widget_PluriYear">
+			    	<div class="flip widget">
+						<div class="card">
+							<div class="face front">
+								<img id="Temp12mBox" class="icon_flip" src="plugins/conso/desktop/css/theme/img/temp.png" title="Voir les températures de cette période">
+								<div class="widget-header">
+									<i class="icon-bar-chart"></i>
+									<h3>Pluriannuel</h3>
+									<span class="datesynchro"></span>
+								</div>
+								<div style="height:340px;" class="widget-content">
+									<div class="shortcuts" >
+										<div class="box-body no-padding">
+											<div class="chart" id="pluri" style="height:300px;"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="face back">
+								<img class="icon_flip" src="plugins/conso/desktop/css/theme/img/elec.png" title="Voir la consommation de cette période">
+								<div class="widget-header">
+									<i class="icon-bar-chart"></i>
+									<h3>Température pluriannuelles</h3>
+									<span class="datesynchro"></span>
+								</div>
+								<div style="height:340px;" class="  widget-content">
+									<div class=" shortcuts" >
+										<div class=" box-body no-padding">
+											<div class="chart" id="pluriTemp" style="height:300px;"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+			    </div>
+				<div class="col-lg-6" id="widget_PluriYearEuro">
+					<div class="flip widget">
+						<div class="card">
+							<div class="face front">
+								<img id="DJUaBox" class="icon_flip" src="plugins/conso/desktop/css/theme/img/dju.png" title="Voir les DJU de cette période">
+								<div class="widget-header">
+									<i class="icon-bar-chart"></i>
+									<h3>Pluriannuel en '.config::byKey('Devise', 'conso').' (HT)</h3>
+									<span class="datesynchro"></span>
+								</div>
+								<div style="height:340px;" class="widget-content">
+									<div class="shortcuts" >
+										<div class="box-body no-padding">
+											<div class="chart" id="pluriEuro" style="height:300px;"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="face back">
+								<img class="icon_flip" src="plugins/conso/desktop/css/theme/img/euro.png" title="Voir la consommation de cette période">
+								<div class="widget-header">
+									<i class="icon-bar-chart"></i>
+									<h3>DJU pluriannuels</h3>
+									<span class="datesynchro"></span>
+								</div>
+								<div style="height:340px;" class="  widget-content">
+									<div class=" shortcuts" >
+										<div class=" box-body no-padding">
+											<div class="chart" id="pluriDJU" style="height:300px;"></div>
+										</div>
 									</div>
 								</div>
 							</div>
