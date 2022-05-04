@@ -21,8 +21,8 @@ if (is_object($cron)) {
 
 include_file('3rdparty', 'bootstrap-select/dist/css/bootstrap-select', 'css', 'conso');
 include_file('3rdparty', 'datetimepicker/jquery.datetimepicker', 'css', 'conso');
-include_file('3rdparty', 'datetimepicker/jquery.datetimepicker', 'css', 'conso');
-include_file('3rdparty', 'datetimepicker/jquery.datetimepicker', 'css', 'conso');
+//include_file('3rdparty', 'datetimepicker/jquery.datetimepicker', 'css', 'conso');
+//include_file('3rdparty', 'datetimepicker/jquery.datetimepicker', 'css', 'conso');
 include_file('3rdparty', 'datatable/datatable', 'css', 'conso');
 include_file('desktop', 'ionicons', 'css', 'conso');
 include_file('desktop', 'panel', 'css', 'conso');
@@ -32,7 +32,7 @@ include_file('desktop/css/theme', 'font-awesome', 'css', 'conso');
 
 /* Set Variable Thème couleur Jeedom*/
 $versionjeedom = "V0";
-$versionplugin = "V3.19";
+$versionplugin = "V3.xx";
 if (jeedom::version() < "4.0.0") {
 	//echo "V3";
 	$versionjeedom = "V3";
@@ -145,6 +145,7 @@ include_file('desktop', 'statistique/categorie/panel_graph_categorie', 'js', 'co
 include_file('desktop', 'statistique/periode/panel_graph_periode', 'js', 'conso');
 include_file('desktop', 'statistique/synthese/panel_graph_synthese', 'js', 'conso');
 include_file('3rdparty', 'jqueryflip/jquery.flip.min', 'js', 'conso');
+include_file('3rdparty', 'datetimepicker/jquery.datetimepicker', 'js', 'conso');
 include_file('desktop', 'widget', 'js', 'consoWidget');
 ?>
 

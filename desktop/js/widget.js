@@ -39,6 +39,8 @@ document.getElementById("widget_DJU4sBox").style.display = "none";
 document.getElementById("widget_DJU12mBox").style.display = "none";
 document.getElementById("widget_YearTaxe").style.display = "none";
 document.getElementById("widget_DJUBox").style.display = "none";
+document.getElementById("widget_PluriYear").style.display = "none";
+document.getElementById("widget_PluriYearEuro").style.display = "none";
 document.getElementById("WidgetError").style.display = "none";
 
 if (idequipement != "") {
@@ -101,6 +103,14 @@ if (idequipement != "") {
 
     if (widgetId == 14) {
         document.getElementById("widget_DJUBox").style.display = "block";
+    };
+
+	if (widgetId == 15) {
+        document.getElementById("widget_PluriYear").style.display = "block";
+    };
+
+	if (widgetId == 16) {
+        document.getElementById("widget_PluriYearEuro").style.display = "block";
     };
 } else {
     document.getElementById("WidgetError").style.display = "block";

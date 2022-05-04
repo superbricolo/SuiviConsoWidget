@@ -509,7 +509,7 @@ echo '<div  class="" id="conso_dashboard" style="height:100%;">
 				</div>
 			</div>
 			<div class="row">
-			    <div class="col-lg-6" id="widget_PluriYear">
+			    <div class="" id="widget_PluriYear">
 			    	<div class="flip widget">
 						<div class="card">
 							<div class="face front">
@@ -545,7 +545,7 @@ echo '<div  class="" id="conso_dashboard" style="height:100%;">
 						</div>
 					</div>
 			    </div>
-				<div class="col-lg-6" id="widget_PluriYearEuro">
+				<div class="" id="widget_PluriYearEuro">
 					<div class="flip widget">
 						<div class="card">
 							<div class="face front">
