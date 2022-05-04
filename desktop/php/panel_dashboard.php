@@ -217,6 +217,7 @@ echo '<div  class="" id="conso_dashboard" style="height:100%;">
 									</div>
 								</div>
 							</div>
+							<br><br>
 							<div  class="widget-content">
 								<div class="shortcuts" >
 									<div id="contentebar" class="box-body no-padding">
