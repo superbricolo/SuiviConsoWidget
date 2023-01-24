@@ -62,6 +62,8 @@ sendVarToJS('versiontheme',$versionjeedom);
 sendVarToJS('versionplugin',$versionplugin);
 /*Devise*/
 sendVarToJS('Devise', config::byKey('Devise', 'conso'));
+sendVarToJS('dispTemp', config::byKey('dispTemp', 'conso',false));
+
 /*Get timeZone*/
 $timezonebis=config::byKey('timezone', 'core', '0');
 sendVarToJS('timezonebis',$timezonebis);
@@ -88,8 +90,8 @@ foreach ($eqLogics as $eqLogic) {
 	}
 }
 
-$display = ($type_abo == 'HCHP' ? '' : 'displaynone');
-$title = ($type_abo == 'HCHP' ? 'HP' : '');
+$display = ($type_abo == 'HCHP' OR $type_abo == 'TEMPO' ? '' : 'displaynone');
+$title = ($type_abo == 'HCHP' OR $type_abo == 'TEMPO' ? 'HP' : '');
 if ($type == 'water') $title = 'M3';
 
 $btnreturn = config::byKey('btn_return', 'conso', false);
