@@ -33,6 +33,7 @@ include_file('desktop/css/theme', 'font-awesome', 'css', 'conso');
 /* Set Variable Thème couleur Jeedom*/
 $versionjeedom = "V0";
 $versionplugin = "V3.xx";
+$versiondate = "V4.3";
 if (jeedom::version() < "4.0.0") {
 	//echo "V3";
 	$versionjeedom = "V3";
@@ -56,10 +57,18 @@ if (jeedom::version() < "4.0.0") {
 	</style>';
 }
 
+if (jeedom::version() >= "4.4.0") {
+	$versiondate = "V4.4";
+}
+else {
+	$versiondate = "V4.3";
+}
+
 /*Thème*/
 sendVarToJS('stylecss', 'cssdefault');
 sendVarToJS('versiontheme',$versionjeedom);
 sendVarToJS('versionplugin',$versionplugin);
+sendVarToJS('versiondate',$versiondate);
 /*Devise*/
 sendVarToJS('Devise', config::byKey('Devise', 'conso'));
 sendVarToJS('dispTemp', config::byKey('dispTemp', 'conso',false));
@@ -147,7 +156,7 @@ include_file('desktop', 'statistique/categorie/panel_graph_categorie', 'js', 'co
 include_file('desktop', 'statistique/periode/panel_graph_periode', 'js', 'conso');
 include_file('desktop', 'statistique/synthese/panel_graph_synthese', 'js', 'conso');
 include_file('3rdparty', 'jqueryflip/jquery.flip.min', 'js', 'conso');
-include_file('3rdparty', 'datetimepicker/jquery.datetimepicker', 'js', 'conso');
+//include_file('3rdparty', 'datetimepicker/jquery.datetimepicker', 'js', 'conso');
 include_file('desktop', 'widget', 'js', 'consoWidget');
 ?>
 

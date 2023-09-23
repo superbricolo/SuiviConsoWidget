@@ -1,63 +1,63 @@
 <?php
 
 
-echo '<div  class="" id="conso_dashboard" style="height:100%;">
+echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 		<div id="div_DashboardAlert" style="display: none;"></div>
 
 		<div class="span6">
 			<div class="row">
-				<div class="" id="widget_tableau_prix">
+				<div class="col-lg-4" id="widget_tableau_prix">
 					<div class="widget flip" id="tableau_prix">
-					<div class="card">
-						<div class="face front">
-						<img class="icon_flip" src="plugins/conso/desktop/css/theme/img/elec.png" title="Voir la consommation">
-						<div class="widget-header">
-							<i class="icon-money"></i>
-							<h3>Prix</h3>
-							<span class="datesynchro"></span>
+						<div class="card">
+							<div class="face front">
+								<img class="icon_flip" src="plugins/conso/desktop/css/theme/img/elec.png" title="Voir la consommation">
+								<div class="widget-header">
+									<i class="icon-money"></i>
+									<h3>Prix</h3>
+									<span class="datesynchro"></span>
+								</div>
+								<div style="height:240px;" class="widget-content">
+									<div class="col-xs-1 changeType" style="display:none;"><button type="button" class="icon-eye-open btn btn-default"></button></div>
+									<table data-role="table" id="table-column-toggle" class="tableaueuros movie-list table table-striped table-bordered ui-responsive">
+										<thead>
+											<tr><th>Périodes</th><th class="tts" data-placement="top" data-toggle="tooltip" title="Prix HT + TVA!" ></th><th class=" dds " data-placement="top" data-toggle="tooltip" title="Prix HT + TVA">HC TTC</th><th data-placement="top" data-toggle="tooltip" title="Prix TTC + Abonnement (Si équipement Total) + TVA + Taxes">Total TTC</th></tr>
+										</thead>
+										<tbody>
+										    <tr><td>Jour </td><td id="day_hp" ></td><td id="day_hc" class="dds "></td><td id="day_total"></td></tr>
+										    <tr><td>Hier </td><td id="yesterday_hp" ></td><td id="yesterday_hc" class="dds "></td><td id="yesterday_total"></td></tr>
+										    <tr><td>Semaine </td><td id="week_hp"></td><td id="week_hc" class="dds "></td><td id="week_total" ></td></tr>
+										    <tr><td>Mois </td><td id="month_hp"></td><td id="month_hc" class="dds "></td><td id="month_total" ></td></tr>
+										    <tr><td>Année <i data-toggle="tooltip"  data-placement="right" title="" class="glyphicon glyphicon-info-sign datefact"></i>
+						                        </td><td id="year_hp"></td><td id="year_hc" class="dds "></td><td id="year_total"></td></tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="face back">
+								<img class="icon_flip" src="plugins/conso/desktop/css/theme/img/euro.png" title="Voir le coût">
+								<div class="widget-header">
+									<i class="icon-money"></i>
+									<h3>Consommation</h3>
+									<span class="datesynchro"></span>
+								</div>
+								<div style="height:240px;" class="widget-content">
+									<table data-role="table" id="table-column-toggle2 "  class="tableauwatt movie-list table table-striped table-bordered ui-responsive">
+										<thead>
+											<tr><th>Périodes</th><th class="tts2" ></th><th class="dds ">HC</th><th class="dds ">Total</th></tr>
+										</thead>
+										<tbody>
+										  <tr><td>Jour </td><td id="day_hpw" ></td><td  id="day_hcw" class="dds "></td><td id="day_totalw" class="dds "></td></tr>
+										  <tr><td>Hier </td><td id="yesterday_hpw" ></td><td id="yesterday_hcw" class="dds "></td><td id="yesterday_totalw" class="dds"></td></tr>
+										  <tr><td>Semaine </td><td id="week_hpw" ></td><td  id="week_hcw" class="dds "></td><td id="week_totalw" class="dds "></td></tr>
+										  <tr><td>Mois </td><td id="month_hpw" ></td><td  id="month_hcw" class=" dds "></td><td id="month_totalw" class="dds "></td></tr>
+										  <tr><td>
+										        Année <i data-toggle="tooltip"  data-placement="right" title="" class="glyphicon glyphicon-info-sign datefact"></i>
+						                        </td><td id="year_hpw"></td><td  id="year_hcw" class=" dds "></td><td id="year_totalw" class="dds "></td></tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
 						</div>
-						<div style="height:240px;" class="widget-content">
-						<div class="col-xs-1 changeType" style="display:none;"><button type="button" class="icon-eye-open btn btn-default"></button></div>
-						<table data-role="table" id="table-column-toggle" class="tableaueuros movie-list table table-striped table-bordered ui-responsive">
-								<thead>
-									<tr><th>Périodes</th><th class="tts" data-placement="top" data-toggle="tooltip" title="Prix HT + TVA!" ></th><th class=" dds " data-placement="top" data-toggle="tooltip" title="Prix HT + TVA">HC TTC</th><th data-placement="top" data-toggle="tooltip" title="Prix TTC + Abonnement (Si équipement Total) + TVA + Taxes">Total TTC</th></tr>
-								</thead>
-								<tbody>
-								    <tr><td>Jour </td><td id="day_hp" ></td><td id="day_hc" class="dds "></td><td id="day_total"></td></tr>
-								    <tr><td>Hier </td><td id="yesterday_hp" ></td><td id="yesterday_hc" class="dds "></td><td id="yesterday_total"></td></tr>
-								    <tr><td>Semaine </td><td id="week_hp"></td><td id="week_hc" class="dds "></td><td id="week_total" ></td></tr>
-								    <tr><td>Mois </td><td id="month_hp"></td><td id="month_hc" class="dds "></td><td id="month_total" ></td></tr>
-								    <tr><td>Année <i data-toggle="tooltip"  data-placement="right" title="" class="glyphicon glyphicon-info-sign datefact"></i>
-				                        </td><td id="year_hp"></td><td id="year_hc" class="dds "></td><td id="year_total"></td></tr>
-								</tbody>
-								</table>
-						</div>
-					</div>
-					<div class="face back">
-						<img class="icon_flip" src="plugins/conso/desktop/css/theme/img/euro.png" title="Voir le coût">
-						<div class="widget-header">
-							<i class="icon-money"></i>
-							<h3>Consommation</h3>
-							<span class="datesynchro"></span>
-						</div>
-						<div style="height:240px;" class="widget-content">
-							<table data-role="table" id="table-column-toggle2 "  class="tableauwatt movie-list table table-striped table-bordered ui-responsive">
-								<thead>
-									<tr><th>Périodes</th><th class="tts2" ></th><th class="dds ">HC</th><th class="dds ">Total</th></tr>
-								</thead>
-								<tbody>
-								  <tr><td>Jour </td><td id="day_hpw" ></td><td  id="day_hcw" class="dds "></td><td id="day_totalw" class="dds "></td></tr>
-								  <tr><td>Hier </td><td id="yesterday_hpw" ></td><td id="yesterday_hcw" class="dds "></td><td id="yesterday_totalw" class="dds"></td></tr>
-								  <tr><td>Semaine </td><td id="week_hpw" ></td><td  id="week_hcw" class="dds "></td><td id="week_totalw" class="dds "></td></tr>
-								  <tr><td>Mois </td><td id="month_hpw" ></td><td  id="month_hcw" class=" dds "></td><td id="month_totalw" class="dds "></td></tr>
-								  <tr><td>
-								        Année <i data-toggle="tooltip"  data-placement="right" title="" class="glyphicon glyphicon-info-sign datefact"></i>
-				                        </td><td id="year_hpw"></td><td  id="year_hcw" class=" dds "></td><td id="year_totalw" class="dds "></td></tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-					</div>
 					</div>
 				</div>
 
@@ -210,9 +210,9 @@ echo '<div  class="" id="conso_dashboard" style="height:100%;">
 								<div class="col-lg-4">
 									<div class="input-group input-daterange">
 										<span class="input-group-addon">Du</span>
-										<input id="current_debut" type="text" class="datecurrent datetimepicker form-control" value="">
+										<input id="current_debut" type="text" class="datecurrent in_datepicker form-control" value="">
 										<span class="input-group-addon">au</span>
-										<input id="current_fin" type="text" class=" datecurrent datetimepicker form-control" value="">
+										<input id="current_fin" type="text" class=" datecurrent in_datepicker form-control" value="">
 										<span id="validedatecurrent" class="input-group-addon">OK</span>
 									</div>
 								</div>
@@ -370,7 +370,7 @@ echo '<div  class="" id="conso_dashboard" style="height:100%;">
 								<img id="DJU7jBox" class="icon_flip" src="plugins/conso/desktop/css/theme/img/dju.png" title="Voir les DJU  de cette période">
 								<div class="widget-header">
 									<i class="icon-bar-chart"></i>
-									<h3>7 derniers jours en '.config::byKey('Devise', 'conso').'</h3>
+									<h3>7 derniers jours en '.config::byKey('Devise', 'conso').' (HT)</h3>
 									<span class="datesynchro"></span>
 								</div>
 								<div style="height:340px;" class="widget-content">
@@ -406,7 +406,7 @@ echo '<div  class="" id="conso_dashboard" style="height:100%;">
 									<img id="DJU4sBox" class="icon_flip" src="plugins/conso/desktop/css/theme/img/dju.png" title="Voir les DJU de cette période ">
 									<div class="widget-header">
 										<i class="icon-bar-chart"></i>
-										<h3>4 dernières semaines en '.config::byKey('Devise', 'conso').'</h3>
+										<h3>4 dernières semaines en '.config::byKey('Devise', 'conso').' (HT)</h3>
 										<span class="datesynchro"></span>
 									</div>
 									<div style="height:340px;" class="widget-content">
@@ -442,7 +442,7 @@ echo '<div  class="" id="conso_dashboard" style="height:100%;">
 								<img id="DJU12mBox" class="icon_flip" src="plugins/conso/desktop/css/theme/img/dju.png" title="Voir les DJU de cette période">
 								<div class="widget-header">
 									<i class="icon-bar-chart"></i>
-									<h3>12 derniers mois en '.config::byKey('Devise', 'conso').'</h3>
+									<h3>12 derniers mois en '.config::byKey('Devise', 'conso').' (HT)</h3>
 									<span class="datesynchro"></span>
 								</div>
 								<div style="height:340px;" class="widget-content">
