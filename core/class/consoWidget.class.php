@@ -112,51 +112,29 @@ class consoWidget extends eqLogic {
 		$ip = $_SERVER['HTTP_HOST'];
 		$code = '';
 		if (filter_var($ip, FILTER_VALIDATE_IP)) {
-			if (config::byKey('modeDebug', 'consoWidget') == 1) {
-				$code = '<div width="100%" height="10%" style="background-color: #262626; color: #acacac;">           DEBUG 1: http://'. $_SERVER['HTTP_HOST'].'/</div>
-				<embed width="100%" height="90%" src="http://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></embed>';
-			} else {
-				$code = ' <embed width="100%" height="100%" src="http://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></embed>';
-			};
+			$validate_ip = 'vrai';
 		} else {
-			$external = "";
-			if (config::byKey('externalComplement', 'core') != ""){
-				$external = '/'.config::byKey('externalComplement', 'core');
-			}
-			if (config::byKey('ProtocoleURL', 'consoWidget') == 1) {
-				if (config::byKey('modeDebug', 'consoWidget') == 1) {
-					if ($external == "") {
-						$code = '<div width="100%" height="10%" style="background-color: #262626; color: #acacac;">           DEBUG 2: https://'. $_SERVER['HTTP_HOST'].'/</div>
-						<embed width="100%" height="90%" src="https://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></embed>';
-					} else {
-						$code = '<div width="100%" height="10%" style="background-color: #262626; color: #acacac;">           DEBUG 3: https://'. $_SERVER['HTTP_HOST'].$external.'/</div>
-						<embed width="100%" height="90%" src="https://'.$_SERVER['HTTP_HOST'].$external.'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></embed>';
-					}
-				} else {
-					if ($external == "") {
-						$code = ' <embed width="100%" height="100%" src="https://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></embed>';
-					} else {
-						$code = ' <embed width="100%" height="100%" src="https://'.$_SERVER['HTTP_HOST'].$external.'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></embed>';
-					}
-				};
-			} else {
-				if (config::byKey('modeDebug', 'consoWidget') == 1) {
-					if ($external == "") {
-						$code = '<div width="100%" height="10%" style="background-color: #262626; color: #acacac;">           DEBUG 4: http://'. $_SERVER['HTTP_HOST'].'/</div>
-						<object width="100%" height="90%" data="http://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></object>';
-							log::add('consoWidget', 'debug','http://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget'));
-					} else {
-						$code = '<div width="100%" height="10%" style="background-color: #262626; color: #acacac;">           DEBUG 5: http://'. $_SERVER['HTTP_HOST'].$external.'/</div>
-						<embed width="100%" height="90%" src="http://'.$_SERVER['HTTP_HOST'].$external.'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></embed>';
-					}
-				} else {
-					if ($external == "") {
-						$code = ' <embed width="100%" height="100%" src="http://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></embed>';
-					} else {
-						$code = ' <embed width="100%" height="100%" src="http://'.$_SERVER['HTTP_HOST'].$external.'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></embed>';
-					}
-				};
-			}
+			$validate_ip = 'faux';
+		}
+		if (config::byKey('ProtocoleURL', 'consoWidget') == 1 and filter_var($ip, FILTER_VALIDATE_IP) == 0) {
+			$chemin = network::getNetworkAccess('external');
+			$rech = 'external';
+		} elseif (config::byKey('ProtocoleURL', 'consoWidget') == 0 and filter_var($ip, FILTER_VALIDATE_IP)) {
+			$chemin = network::getNetworkAccess('internal');
+			$rech = 'internal';
+		} elseif (config::byKey('ProtocoleURL', 'consoWidget') == 0 and filter_var($ip, FILTER_VALIDATE_IP) == 0) {
+			$chemin = network::getNetworkAccess('external');
+			$rech = 'external';
+		} else {
+			$chemin = network::getNetworkAccess('auto');
+			$rech = 'auto';
+		}
+
+		if (config::byKey('modeDebug', 'consoWidget') == 1) {
+			$code = '<div width="100%" height="10%" style="background-color: #262626; color: #acacac;">           DEBUG 1: '. $chemin.'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').' IP: '.$ip.' validate_ip: '.$validate_ip.' rech:'.$rech.'</div>
+			<embed width="100%" height="90%" src="'.$chemin.'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></embed>';
+		} else {
+			$code = ' <embed width="100%" height="100%" src="'.$chemin.'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></embed>';
 		}
 
 		preg_match_all("/#cmd([0-9]+)#/", $code, $matches, PREG_SET_ORDER);
