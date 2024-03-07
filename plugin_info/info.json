@@ -8,8 +8,8 @@
 	"category" : "energy",
 	"hasDependency" : 0,
 	"hasOwnDeamon" : 0,
-	"changelog" : "https://domotechdiscord.github.io/Docs/consoWidget/fr_FR/changelog",
-	"documentation" : "https://domotechdiscord.github.io/Docs/consoWidget/fr_FR/",
+	"changelog" : "https://superbricolo.github.io/superbricoloDocs/consoWidget/fr_FR/changelog",
+	"documentation" : "https://superbricolo.github.io/superbricoloDocs/consoWidget/fr_FR/",
 	"link" : {
 		"forum":"https://community.jeedom.com/t/plugin-suivi-conso-debuggage/"
 	},
