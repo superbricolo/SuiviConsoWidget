@@ -1,7 +1,7 @@
 {
 	"id" : "consoWidget",
 	"name" : "Suivi Conso Widget",
-	"version": "0.5",
+	"version": "0.8",
 	"licence" : "AGPL",
 	"author" : "Thibaut Trarbach",
 	"require" : "3.2",
