@@ -122,7 +122,7 @@ class consoWidget extends eqLogic {
 		} elseif (config::byKey('ProtocoleURL', 'consoWidget') == 0 and (filter_var($ip, FILTER_VALIDATE_IP) or $ip = config::byKey('internalAddr'))) {
 			$chemin = network::getNetworkAccess('internal');
 			$rech = 'internal';
-		} elseif (config::byKey('ProtocoleURL', 'consoWidget') == 0 and filter_var($ip, FILTER_VALIDATE_IP) == 0) {
+		} elseif (config::byKey('ProtocoleURL', 'consoWidget') == 0 and filter_var($ip, FILTER_VALIDATE_IP) == 0 and $ip != config::byKey('internalAddr')) {
 			$chemin = network::getNetworkAccess('external');
 			$rech = 'external';
 		} else {
