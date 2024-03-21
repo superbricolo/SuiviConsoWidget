@@ -134,7 +134,7 @@ class consoWidget extends eqLogic {
 		}
 
 		if (config::byKey('modeDebug', 'consoWidget') == 1) {
-			$code = '<div width="100%" height="10%" style="background-color: #262626; color: #acacac;">           DEBUG 2: '. $chemin.'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').' IP: '.$ip.' Adresse interne: '.config::byKey('internalAddr').' Adresse externe: '.config::byKey('externalAddr').' validate_ip: '.$validate_ip.' rech:'.$rech.'</div>
+			$code = '<div width="100%" height="10%" style="background-color: #262626; color: #acacac;">           DEBUG 3: '. $chemin.'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').' IP: '.$ip.' Adresse interne: '.config::byKey('internalAddr').' Adresse externe: '.config::byKey('externalAddr').' validate_ip: '.$validate_ip.' rech:'.$rech.'</div>
 			<embed width="100%" height="90%" src="'.$chemin.'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></embed>';
 		} else {
 			$code = ' <embed width="100%" height="100%" src="'.$chemin.'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></embed>';
