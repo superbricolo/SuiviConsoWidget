@@ -1,18 +1,18 @@
 {
 	"id" : "consoWidget",
 	"name" : "Suivi Conso Widget",
-	"version": "0.5",
+	"version": "0.9",
 	"licence" : "AGPL",
 	"author" : "Thibaut Trarbach",
 	"require" : "3.2",
 	"category" : "energy",
-	"hasDependency" : 1,
+	"hasDependency" : 0,
 	"hasOwnDeamon" : 0,
-	"changelog" : "https://mickeys27.github.io/Docs/conso/#language#/changelog",
-	"documentation" : "https://mickeys27.github.io/Docs/conso/#language#/",
+	"changelog" : "https://superbricolo.github.io/superbricoloDocs/consoWidget/fr_FR/changelog",
+	"documentation" : "https://superbricolo.github.io/superbricoloDocs/consoWidget/fr_FR/",
 	"link" : {
 		"forum":"https://community.jeedom.com/t/plugin-suivi-conso-debuggage/"
 	},
 	"language" : ["fr_FR"],
-	"compatibility" : ["miniplus","smart","rpi","docker","diy"]
+	"compatibility" : ["miniplus","smart","rpi","docker","diy","v4"]
 }

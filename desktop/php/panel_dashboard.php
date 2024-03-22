@@ -8,60 +8,60 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 			<div class="row">
 				<div class="col-lg-4" id="widget_tableau_prix">
 					<div class="widget flip" id="tableau_prix">
-					<div class="card">
-						<div class="face front">
-						<img class="icon_flip" src="plugins/conso/plugin_info/theme/img/elec.png" title="Voir la consommation">
-						<div class="widget-header">
-							<i class="icon-money"></i>
-							<h3>Prix</h3>
-							<span class="datesynchro"></span>
+						<div class="card">
+							<div class="face front">
+								<img class="icon_flip" src="plugins/conso/desktop/css/theme/img/elec.png" title="Voir la consommation">
+								<div class="widget-header">
+									<i class="icon-money"></i>
+									<h3>Prix</h3>
+									<span class="datesynchro"></span>
+								</div>
+								<div style="height:240px;" class="widget-content">
+									<div class="col-xs-1 changeType" style="display:none;"><button type="button" class="icon-eye-open btn btn-default"></button></div>
+									<table data-role="table" id="table-column-toggle" class="tableaueuros movie-list table table-striped table-bordered ui-responsive">
+										<thead>
+											<tr><th>Périodes</th><th class="tts" data-placement="top" data-toggle="tooltip" title="Prix HT + TVA!" ></th><th class=" dds " data-placement="top" data-toggle="tooltip" title="Prix HT + TVA">HC TTC</th><th data-placement="top" data-toggle="tooltip" title="Prix TTC + Abonnement (Si équipement Total) + TVA + Taxes">Total TTC</th></tr>
+										</thead>
+										<tbody>
+										    <tr><td>Jour </td><td id="day_hp" ></td><td id="day_hc" class="dds "></td><td id="day_total"></td></tr>
+										    <tr><td>Hier </td><td id="yesterday_hp" ></td><td id="yesterday_hc" class="dds "></td><td id="yesterday_total"></td></tr>
+										    <tr><td>Semaine </td><td id="week_hp"></td><td id="week_hc" class="dds "></td><td id="week_total" ></td></tr>
+										    <tr><td>Mois </td><td id="month_hp"></td><td id="month_hc" class="dds "></td><td id="month_total" ></td></tr>
+										    <tr><td>Année <i data-toggle="tooltip"  data-placement="right" title="" class="glyphicon glyphicon-info-sign datefact"></i>
+						                        </td><td id="year_hp"></td><td id="year_hc" class="dds "></td><td id="year_total"></td></tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="face back">
+								<img class="icon_flip" src="plugins/conso/desktop/css/theme/img/euro.png" title="Voir le coût">
+								<div class="widget-header">
+									<i class="icon-money"></i>
+									<h3>Consommation</h3>
+									<span class="datesynchro"></span>
+								</div>
+								<div style="height:240px;" class="widget-content">
+									<table data-role="table" id="table-column-toggle2 "  class="tableauwatt movie-list table table-striped table-bordered ui-responsive">
+										<thead>
+											<tr><th>Périodes</th><th class="tts2" ></th><th class="dds ">HC</th><th class="dds ">Total</th></tr>
+										</thead>
+										<tbody>
+										  <tr><td>Jour </td><td id="day_hpw" ></td><td  id="day_hcw" class="dds "></td><td id="day_totalw" class="dds "></td></tr>
+										  <tr><td>Hier </td><td id="yesterday_hpw" ></td><td id="yesterday_hcw" class="dds "></td><td id="yesterday_totalw" class="dds"></td></tr>
+										  <tr><td>Semaine </td><td id="week_hpw" ></td><td  id="week_hcw" class="dds "></td><td id="week_totalw" class="dds "></td></tr>
+										  <tr><td>Mois </td><td id="month_hpw" ></td><td  id="month_hcw" class=" dds "></td><td id="month_totalw" class="dds "></td></tr>
+										  <tr><td>
+										        Année <i data-toggle="tooltip"  data-placement="right" title="" class="glyphicon glyphicon-info-sign datefact"></i>
+						                        </td><td id="year_hpw"></td><td  id="year_hcw" class=" dds "></td><td id="year_totalw" class="dds "></td></tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
 						</div>
-						<div style="height:240px;" class="widget-content">
-						<div class="col-xs-1 changeType" style="display:none;"><button type="button" class="icon-eye-open btn btn-default"></button></div>
-						<table data-role="table" id="table-column-toggle" class="tableaueuros movie-list table table-striped table-bordered ui-responsive">
-								<thead>
-									<tr><th>Périodes</th><th class="tts" data-placement="top" data-toggle="tooltip" title="Prix HT + TVA!" ></th><th class=" dds " data-placement="top" data-toggle="tooltip" title="Prix HT + TVA">HC TTC</th><th data-placement="top" data-toggle="tooltip" title="Prix TTC + Abonnement (Si équipement Total) + TVA + Taxes">Total TTC</th></tr>
-								</thead>
-								<tbody>
-								    <tr><td>Jour </td><td id="day_hp" ></td><td id="day_hc" class="dds "></td><td id="day_total"></td></tr>
-								    <tr><td>Hier </td><td id="yesterday_hp" ></td><td id="yesterday_hc" class="dds "></td><td id="yesterday_total"></td></tr>
-								    <tr><td>Semaine </td><td id="week_hp"></td><td id="week_hc" class="dds "></td><td id="week_total" ></td></tr>
-								    <tr><td>Mois </td><td id="month_hp"></td><td id="month_hc" class="dds "></td><td id="month_total" ></td></tr>
-								    <tr><td>Année <i data-toggle="tooltip"  data-placement="right" title="" class="glyphicon glyphicon-info-sign datefact"></i>
-				                        </td><td id="year_hp"></td><td id="year_hc" class="dds "></td><td id="year_total"></td></tr>
-								</tbody>
-								</table>
-						</div>
-					</div>
-					<div class="face back">
-						<img class="icon_flip" src="plugins/conso/plugin_info/theme/img/euro.png" title="Voir le coût">
-						<div class="widget-header">
-							<i class="icon-money"></i>
-							<h3>Consommation</h3>
-							<span class="datesynchro"></span>
-						</div>
-						<div style="height:240px;" class="widget-content">
-							<table data-role="table" id="table-column-toggle2 "  class="tableauwatt movie-list table table-striped table-bordered ui-responsive">
-								<thead>
-									<tr><th>Périodes</th><th class="tts2" ></th><th class="dds ">HC</th><th class="dds ">Total</th></tr>
-								</thead>
-								<tbody>
-								  <tr><td>Jour </td><td id="day_hpw" ></td><td  id="day_hcw" class="dds "></td><td id="day_totalw" class="dds "></td></tr>
-								  <tr><td>Hier </td><td id="yesterday_hpw" ></td><td id="yesterday_hcw" class="dds "></td><td id="yesterday_totalw" class="dds"></td></tr>
-								  <tr><td>Semaine </td><td id="week_hpw" ></td><td  id="week_hcw" class="dds "></td><td id="week_totalw" class="dds "></td></tr>
-								  <tr><td>Mois </td><td id="month_hpw" ></td><td  id="month_hcw" class=" dds "></td><td id="month_totalw" class="dds "></td></tr>
-								  <tr><td>
-								        Année <i data-toggle="tooltip"  data-placement="right" title="" class="glyphicon glyphicon-info-sign datefact"></i>
-				                        </td><td id="year_hpw"></td><td  id="year_hcw" class=" dds "></td><td id="year_totalw" class="dds "></td></tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-					</div>
 					</div>
 				</div>
 
-				<div class="col-lg-4" id="widget_Consobox">
+				<div class="" id="widget_Consobox">
 					<div class="row">
 						<div style="display:none" id="Consobox" class="TableauBox widget flip"></div>
 						<div style="display:none" id="previsionbox" class="TableauBox widget flip">
@@ -76,7 +76,7 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 										<div id="content_prevision" style="height:240px;" class="widget-content">
 											<div class=" prevision col-lg-12">
 												<div class="previsionbox nopadding col-lg-2">
-													<img id="imgcharge" class="img_charge" src="plugins/conso/plugin_info/theme/img/charge/charge.png" title="">
+													<img id="imgcharge" class="img_charge" src="plugins/conso/desktop/css/theme/img/charge/charge.png" title="">
 												</div>
 												<div class="col-lg-4 statcharge">
 														<div id="consomme_contener">Consommé : <span id="consomme" class="pre_value"></span></div>
@@ -92,7 +92,7 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 											<div class="row">
 												<div class=" previsionyear col-lg-12">
 													<div class="nopadding col-lg-2">
-														<img id="imgcharge_year" class="img_charge" src="plugins/conso/plugin_info/theme/img/charge/charge.png" title="">
+														<img id="imgcharge_year" class="img_charge" src="plugins/conso/desktop/css/theme/img/charge/charge.png" title="">
 													</div>
 													<div class="col-lg-4 statcharge ">
 															<div id="consomme_contener_year">Consommé : <span id="consomme_year" class="pre_value"></span></div>
@@ -160,7 +160,7 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 					</div>
 				</div>
 				<div id="widget_gauge">
-					<div id="widgetgauge" class="col-lg-2">
+					<div id="widgetgauge" class="">
 						<div class="widget">
 							<div class="widget-header">
 								<i class="icon-bolt"></i>
@@ -178,7 +178,7 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 						</div>
 					</div>
 				</div>
-			    <div class="col-lg-2" id="widget_variation">
+			    <div class="" id="widget_variation">
 					<div class="widget">
 						<div class="widget-header">
 							<i class="icon-list-alt"></i>
@@ -210,13 +210,14 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 								<div class="col-lg-4">
 									<div class="input-group input-daterange">
 										<span class="input-group-addon">Du</span>
-										<input id="current_debut" type="text" class="datecurrent datetimepicker form-control" value="">
+										<input id="current_debut" type="text" class="datecurrent in_datepicker form-control" value="">
 										<span class="input-group-addon">au</span>
-										<input id="current_fin" type="text" class=" datecurrent datetimepicker form-control" value="">
+										<input id="current_fin" type="text" class=" datecurrent in_datepicker form-control" value="">
 										<span id="validedatecurrent" class="input-group-addon">OK</span>
 									</div>
 								</div>
 							</div>
+							<br><br>
 							<div  class="widget-content">
 								<div class="shortcuts" >
 									<div id="contentebar" class="box-body no-padding">
@@ -249,11 +250,11 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 			</div>
 			<!-- ligne 2 -->
 			<div class="row">
-			    <div class="col-lg-4" id="widget_Temp7jBox">
+			    <div class="" id="widget_Temp7jBox">
 					<div class="flip widget">
 						<div class="card">
 							<div class="face front">
-								<img id="Temp7jBox" class="icon_flip" src="plugins/conso/plugin_info/theme/img/temp.png" title="Voir les températures de cette période">
+								<img id="Temp7jBox" class="icon_flip" src="plugins/conso/desktop/css/theme/img/temp.png" title="Voir les températures de cette période">
 								<div class="widget-header">
 									<i class="icon-bar-chart"></i>
 									<h3>7 derniers jours</h3>
@@ -268,7 +269,7 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 								</div>
 							</div>
 							<div class="face back">
-								<img class="icon_flip" src="plugins/conso/plugin_info/theme/img/elec.png" title="Voir la consommation de cette période">
+								<img class="icon_flip" src="plugins/conso/desktop/css/theme/img/elec.png" title="Voir la consommation de cette période">
 								<div class="widget-header">
 									<i class="icon-bar-chart"></i>
 									<h3>Température 7 derniers jours</h3>
@@ -286,11 +287,11 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 					</div>
 				</div>
 
-			    <div class="col-lg-4" id="widget_Temp4sBox">
+			    <div class="" id="widget_Temp4sBox">
 					<div class="flip widget">
 						<div class="card">
 							<div class="face front">
-								<img id="Temp4sBox" class="icon_flip" src="plugins/conso/plugin_info/theme/img/temp.png" title="Voir les températures de cette période">
+								<img id="Temp4sBox" class="icon_flip" src="plugins/conso/desktop/css/theme/img/temp.png" title="Voir les températures de cette période">
 								<div class="widget-header">
 									<i class="icon-bar-chart"></i>
 									<h3>4 dernières semaines</h3>
@@ -305,7 +306,7 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 								</div>
 							</div>
 							<div class="face back">
-								<img class="icon_flip" src="plugins/conso/plugin_info/theme/img/elec.png" title="Voir la consommation de cette période">
+								<img class="icon_flip" src="plugins/conso/desktop/css/theme/img/elec.png" title="Voir la consommation de cette période">
 								<div class="widget-header">
 									<i class="icon-bar-chart"></i>
 									<h3>Température 4 dernières semaines</h3>
@@ -323,11 +324,11 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 					</div>
 				</div>
 
-			    <div class="col-lg-4" id="widget_Temp12mBox">
+			    <div class="" id="widget_Temp12mBox">
 					<div class="flip widget">
 						<div class="card">
 							<div class="face front">
-								<img id="Temp12mBox" class="icon_flip" src="plugins/conso/plugin_info/theme/img/temp.png" title="Voir les températures de cette période">
+								<img id="Temp12mBox" class="icon_flip" src="plugins/conso/desktop/css/theme/img/temp.png" title="Voir les températures de cette période">
 								<div class="widget-header">
 									<i class="icon-bar-chart"></i>
 									<h3>12 derniers mois</h3>
@@ -342,7 +343,7 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 								</div>
 							</div>
 							<div class="face back">
-								<img class="icon_flip" src="plugins/conso/plugin_info/theme/img/elec.png" title="Voir la consommation de cette période">
+								<img class="icon_flip" src="plugins/conso/desktop/css/theme/img/elec.png" title="Voir la consommation de cette période">
 								<div class="widget-header">
 									<i class="icon-bar-chart"></i>
 									<h3>Température 12 derniers mois</h3>
@@ -362,14 +363,14 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 			</div>
 			<!-- ligne 3 -->
 			<div class="row">
-				<div class=" col-lg-4" id="widget_DJU7jBox">
+				<div class="" id="widget_DJU7jBox">
 					<div class="flip widget">
 						<div class="card">
 							<div class="face front">
-								<img id="DJU7jBox" class="icon_flip" src="plugins/conso/plugin_info/theme/img/dju.png" title="Voir les DJU  de cette période">
+								<img id="DJU7jBox" class="icon_flip" src="plugins/conso/desktop/css/theme/img/dju.png" title="Voir les DJU  de cette période">
 								<div class="widget-header">
 									<i class="icon-bar-chart"></i>
-									<h3>7 derniers jours en '.config::byKey('Devise', 'conso').'</h3>
+									<h3>7 derniers jours en '.config::byKey('Devise', 'conso').' (HT)</h3>
 									<span class="datesynchro"></span>
 								</div>
 								<div style="height:340px;" class="widget-content">
@@ -381,7 +382,7 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 								</div>
 							</div>
 							<div class="face back">
-								<img class="icon_flip" src="plugins/conso/plugin_info/theme/img/euro.png" title="Voir  la consommation de cette période">
+								<img class="icon_flip" src="plugins/conso/desktop/css/theme/img/euro.png" title="Voir  la consommation de cette période">
 								<div class="widget-header">
 									<i class="icon-bar-chart"></i>
 									<h3>DJU des 7 derniers jours</h3>
@@ -398,14 +399,14 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 						</div>
 					</div>
 			    </div>
-				<div class=" col-lg-4" id="widget_DJU4sBox">
+				<div class="" id="widget_DJU4sBox">
 					<div class="flip widget">
 						<div class="card">
 							<div class="face front">
-									<img id="DJU4sBox" class="icon_flip" src="plugins/conso/plugin_info/theme/img/dju.png" title="Voir les DJU de cette période ">
+									<img id="DJU4sBox" class="icon_flip" src="plugins/conso/desktop/css/theme/img/dju.png" title="Voir les DJU de cette période ">
 									<div class="widget-header">
 										<i class="icon-bar-chart"></i>
-										<h3>4 dernières semaines en '.config::byKey('Devise', 'conso').'</h3>
+										<h3>4 dernières semaines en '.config::byKey('Devise', 'conso').' (HT)</h3>
 										<span class="datesynchro"></span>
 									</div>
 									<div style="height:340px;" class="widget-content">
@@ -417,7 +418,7 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 								</div>
 							</div>
 							<div class="face back">
-								<img class="icon_flip" src="plugins/conso/plugin_info/theme/img/euro.png" title="Voir la consommation de cette période">
+								<img class="icon_flip" src="plugins/conso/desktop/css/theme/img/euro.png" title="Voir la consommation de cette période">
 								<div class="widget-header">
 									<i class="icon-bar-chart"></i>
 									<h3>DJU des 4 dernières semaines</h3>
@@ -434,14 +435,14 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 						</div>
 					</div>
 			    </div>
-				<div class=" col-lg-4" id="widget_DJU12mBox">
+				<div class="" id="widget_DJU12mBox">
 					<div class="flip widget">
 						<div class="card">
 							<div class="face front">
-								<img id="DJU12mBox" class="icon_flip" src="plugins/conso/plugin_info/theme/img/dju.png" title="Voir les DJU de cette période">
+								<img id="DJU12mBox" class="icon_flip" src="plugins/conso/desktop/css/theme/img/dju.png" title="Voir les DJU de cette période">
 								<div class="widget-header">
 									<i class="icon-bar-chart"></i>
-									<h3>12 derniers mois en '.config::byKey('Devise', 'conso').'</h3>
+									<h3>12 derniers mois en '.config::byKey('Devise', 'conso').' (HT)</h3>
 									<span class="datesynchro"></span>
 								</div>
 								<div style="height:340px;" class="widget-content">
@@ -453,7 +454,7 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 								</div>
 							</div>
 							<div class="face back">
-								<img class="icon_flip" src="plugins/conso/plugin_info/theme/img/euro.png" title="Voir la consommation de cette période">
+								<img class="icon_flip" src="plugins/conso/desktop/css/theme/img/euro.png" title="Voir la consommation de cette période">
 								<div class="widget-header">
 									<i class="icon-bar-chart"></i>
 									<h3>DJU des 12 derniers mois</h3>
@@ -473,7 +474,7 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 			</div>
 
 			<div class="row">
-			    <div class="col-lg-6" id="widget_YearTaxe">
+			    <div class="" id="widget_YearTaxe">
 			    	<div class="widget">
 						<div class="widget-header">
 							<i class="icon-bar-chart"></i>
@@ -490,7 +491,7 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 					</div>
 			    </div>
 				<div id="widget_DJUBox">
-					<div id="DJUBox" class="col-lg-6">
+					<div id="DJUBox" class="">
 						<div class="widget">
 							<div class="widget-header">
 								<i class="icon-bar-chart"></i>
@@ -501,6 +502,100 @@ echo '<div  class="col-lg-12" id="conso_dashboard" style="height:100%;">
 								<div class="shortcuts" >
 									<div class="box-body no-padding">
 										<div class="chart" id="DJUYear" style="height:300px;"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+			    <div class="" id="widget_PluriYear">
+			    	<div class="flip widget">
+						<div class="card">
+							<div class="face front">
+								<img id="Temp12mBox" class="icon_flip" src="plugins/conso/desktop/css/theme/img/temp.png" title="Voir les températures de cette période">
+								<div class="widget-header">
+									<i class="icon-bar-chart"></i>
+									<h3>Pluriannuel</h3>
+									<span class="datesynchro"></span>
+								</div>
+								<div style="height:340px;" class="widget-content">
+									<div class="shortcuts" >
+										<div class="box-body no-padding">
+											<div class="chart" id="pluri" style="height:300px;"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="face back">
+								<img class="icon_flip" src="plugins/conso/desktop/css/theme/img/elec.png" title="Voir la consommation de cette période">
+								<div class="widget-header">
+									<i class="icon-bar-chart"></i>
+									<h3>Température pluriannuelles</h3>
+									<span class="datesynchro"></span>
+								</div>
+								<div style="height:340px;" class="  widget-content">
+									<div class=" shortcuts" >
+										<div class=" box-body no-padding">
+											<div class="chart" id="pluriTemp" style="height:300px;"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+			    </div>
+				<div class="" id="widget_PluriYearEuro">
+					<div class="flip widget">
+						<div class="card">
+							<div class="face front">
+								<img id="DJUaBox" class="icon_flip" src="plugins/conso/desktop/css/theme/img/dju.png" title="Voir les DJU de cette période">
+								<div class="widget-header">
+									<i class="icon-bar-chart"></i>
+									<h3>Pluriannuel en '.config::byKey('Devise', 'conso').' (HT)</h3>
+									<span class="datesynchro"></span>
+								</div>
+								<div style="height:340px;" class="widget-content">
+									<div class="shortcuts" >
+										<div class="box-body no-padding">
+											<div class="chart" id="pluriEuro" style="height:300px;"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="face back">
+								<img class="icon_flip" src="plugins/conso/desktop/css/theme/img/euro.png" title="Voir la consommation de cette période">
+								<div class="widget-header">
+									<i class="icon-bar-chart"></i>
+									<h3>DJU pluriannuels</h3>
+									<span class="datesynchro"></span>
+								</div>
+								<div style="height:340px;" class="  widget-content">
+									<div class=" shortcuts" >
+										<div class=" box-body no-padding">
+											<div class="chart" id="pluriDJU" style="height:300px;"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="WidgetError">
+					<div id="ERROR" class="">
+						<div class="widget">
+							<div class="widget-header">
+								<i class="icon-bar-chart"></i>
+								<h3>Erreur, aucun équipement choisi</h3>
+								<span class="datesynchro"></span>
+							</div>
+							<div style="height:340px;" class="widget-content">
+								<div class="shortcuts" >
+									<div class="box-body no-padding">
+									Vous n\'avez pas configuré d\'équipement Suivi-conso dans la configuration du widget.
+
+									Pour le configurer rendez-vous dans la page de configuration de l\'équipement et choisissez un équipement de suivie conso.
 									</div>
 								</div>
 							</div>

@@ -21,17 +21,19 @@ if (is_object($cron)) {
 
 include_file('3rdparty', 'bootstrap-select/dist/css/bootstrap-select', 'css', 'conso');
 include_file('3rdparty', 'datetimepicker/jquery.datetimepicker', 'css', 'conso');
-include_file('3rdparty', 'datetimepicker/jquery.datetimepicker', 'css', 'conso');
-include_file('3rdparty', 'datetimepicker/jquery.datetimepicker', 'css', 'conso');
+//include_file('3rdparty', 'datetimepicker/jquery.datetimepicker', 'css', 'conso');
+//include_file('3rdparty', 'datetimepicker/jquery.datetimepicker', 'css', 'conso');
 include_file('3rdparty', 'datatable/datatable', 'css', 'conso');
 include_file('desktop', 'ionicons', 'css', 'conso');
 include_file('desktop', 'panel', 'css', 'conso');
 /*Theme*/
-include_file('plugin_info/theme', 'style', 'css', 'conso');
-include_file('plugin_info/theme', 'font-awesome', 'css', 'conso');
+include_file('desktop/css/theme', 'style', 'css', 'conso');
+include_file('desktop/css/theme', 'font-awesome', 'css', 'conso');
 
-/* Set Variable Thème couleur Jeedom*/ 
+/* Set Variable Thème couleur Jeedom*/
 $versionjeedom = "V0";
+$versionplugin = "V3.xx";
+$versiondate = "V4.3";
 if (jeedom::version() < "4.0.0") {
 	//echo "V3";
 	$versionjeedom = "V3";
@@ -55,11 +57,22 @@ if (jeedom::version() < "4.0.0") {
 	</style>';
 }
 
+if (jeedom::version() >= "4.4.0") {
+	$versiondate = "V4.4";
+}
+else {
+	$versiondate = "V4.3";
+}
+
 /*Thème*/
 sendVarToJS('stylecss', 'cssdefault');
 sendVarToJS('versiontheme',$versionjeedom);
+sendVarToJS('versionplugin',$versionplugin);
+sendVarToJS('versiondate',$versiondate);
 /*Devise*/
 sendVarToJS('Devise', config::byKey('Devise', 'conso'));
+sendVarToJS('dispTemp', config::byKey('dispTemp', 'conso',false));
+
 /*Get timeZone*/
 $timezonebis=config::byKey('timezone', 'core', '0');
 sendVarToJS('timezonebis',$timezonebis);
@@ -86,8 +99,8 @@ foreach ($eqLogics as $eqLogic) {
 	}
 }
 
-$display = ($type_abo == 'HCHP' ? '' : 'displaynone');
-$title = ($type_abo == 'HCHP' ? 'HP' : '');
+$display = ($type_abo == 'HCHP' OR $type_abo == 'TEMPO' ? '' : 'displaynone');
+$title = ($type_abo == 'HCHP' OR $type_abo == 'TEMPO' ? 'HP' : '');
 if ($type == 'water') $title = 'M3';
 
 $btnreturn = config::byKey('btn_return', 'conso', false);
@@ -101,6 +114,7 @@ sendVarToJS('type_abo', $type_abo);
 sendVarToJS('display', $display);
 sendVarToJS('type', $type);
 sendVarToJS('widgetId', $id=$_GET["widget"]);
+sendVarToJS('idequipement', $_GET["id"]);
 ?>
 	<div id="menu">
 		<select id="conso_ecq">
@@ -117,10 +131,11 @@ sendVarToJS('widgetId', $id=$_GET["widget"]);
 		<?php
 
 		include_once("panel_dashboard.php");
-		include_once(__DIR__."/../../../conso/desktop/php/panel_temperature.php");
-		include_once(__DIR__."/../../../conso/desktop/php/statistique/periode/panel_graph_periode.php");
-		include_once(__DIR__."/../../../conso/desktop/php/statistique/categorie/panel_graph_categorie.php");
-		include_once(__DIR__."/../../../conso/desktop/php/statistique/synthese/panel_graph_synthese.php");
+		include_once(__DIR__."/../../../conso/core/php/panel_temperature.php");
+		include_once(__DIR__."/../../../conso/core/class/conso_panel.class.php");
+		//include_once(__DIR__."/../../../conso/desktop/php/statistique/periode/panel_graph_periode.php");
+		//include_once(__DIR__."/../../../conso/desktop/php/statistique/categorie/panel_graph_categorie.php");
+		//include_once(__DIR__."/../../../conso/desktop/php/statistique/synthese/panel_graph_synthese.php");
 		//include_once("conso.php");
 
 		?>
@@ -141,7 +156,10 @@ include_file('desktop', 'statistique/categorie/panel_graph_categorie', 'js', 'co
 include_file('desktop', 'statistique/periode/panel_graph_periode', 'js', 'conso');
 include_file('desktop', 'statistique/synthese/panel_graph_synthese', 'js', 'conso');
 include_file('3rdparty', 'jqueryflip/jquery.flip.min', 'js', 'conso');
+//include_file('3rdparty', 'datetimepicker/jquery.datetimepicker', 'js', 'conso');
 include_file('desktop', 'widget', 'js', 'consoWidget');
-//include_file('desktop', 'statistique', 'js', 'conso');
-
 ?>
+
+<script type="text/javascript">
+	setTimeout(() => { document.getElementById("conso_dashboard").style.overflow = "visible"; }, 1000);
+</script>

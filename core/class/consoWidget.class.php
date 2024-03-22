@@ -108,19 +108,45 @@ class consoWidget extends eqLogic {
 
 
 	public function getCode(){
-		if ($this->getConfiguration(consowidget_protocole) == 1) {
-			$code = '<iframe width="100%" height="100%" src="https://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>'; 
+		$debugConf = '';
+		$ip = $_SERVER['HTTP_HOST'];
+		$code = '';
+		if (filter_var($ip, FILTER_VALIDATE_IP)) {
+			$validate_ip = 'vrai';
 		} else {
-			$code = '<iframe width="100%" height="100%" src="http://'.$_SERVER['HTTP_HOST'].'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></iframe>';
+			$validate_ip = 'faux';
 		}
-				
+		if (config::byKey('ProtocoleURL', 'consoWidget') == 1 and filter_var($ip, FILTER_VALIDATE_IP) == 0 and $ip == config::byKey('externalAddr')) {
+			$chemin = network::getNetworkAccess('external');
+			$rech = 'external';
+		} elseif (config::byKey('ProtocoleURL', 'consoWidget') == 0 and filter_var($ip, FILTER_VALIDATE_IP) and $ip == config::byKey('internalAddr')) {
+			$chemin = network::getNetworkAccess('internal');
+			$rech = 'internal';
+		} elseif (config::byKey('ProtocoleURL', 'consoWidget') == 0 and filter_var($ip, FILTER_VALIDATE_IP) == 0 and $ip == config::byKey('externalAddr')) {
+			$chemin = network::getNetworkAccess('external');
+			$rech = 'external';
+		} elseif (config::byKey('ProtocoleURL', 'consoWidget') == 0 and filter_var($ip, FILTER_VALIDATE_IP) == 0 and $ip != config::byKey('externalAddr') and $ip != config::byKey('internalAddr')) {
+			$chemin = 'http://'.$ip;
+			$rech = 'manual';
+		} else {
+			$chemin = network::getNetworkAccess('auto');
+			$rech = 'auto';
+		}
+
+		if (config::byKey('modeDebug', 'consoWidget') == 1) {
+			$code = '<div width="100%" height="10%" style="background-color: #262626; color: #acacac;">           DEBUG 3: '. $chemin.'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').' IP: '.$ip.' Adresse interne: '.config::byKey('internalAddr').' Adresse externe: '.config::byKey('externalAddr').' validate_ip: '.$validate_ip.' rech:'.$rech.'</div>
+			<embed width="100%" height="90%" src="'.$chemin.'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></embed>';
+		} else {
+			$code = ' <embed width="100%" height="100%" src="'.$chemin.'/index.php?v=d&m=consoWidget&p=widget&id='.$this->getConfiguration('idequip').'&widget='.$this->getConfiguration('type_consoWidget').'" frameborder="0"></embed>';
+		}
+
 		preg_match_all("/#cmd([0-9]+)#/", $code, $matches, PREG_SET_ORDER);
 		foreach($matches as $match){
 			$code = str_replace('#cmd'.$match[1].'#', cmd::byId($match[1])->toHtml(), $code);
-		}	
+		}
 		return $code;
 	}
-	
+
 	public function toHtml($_version = 'dashboard') {
 		$replace = $this->preToHtml($_version, array(), true);
 
@@ -133,7 +159,7 @@ class consoWidget extends eqLogic {
 		$replace['#eqLogic_class#'] = 'eqLogic_layout_default';
 		$replace['#width#'] = $this->getDisplay('width', 'auto');
 		$replace['#height#'] = $this->getDisplay('height', 'auto');
-		$replace['#cmd#'] = $this->toHtmlCmd($_version,  $replace['#background-color#'] == 'transparent');
+		$replace['#cmd#'] = $this->toHtmlCmd($_version,  false);
 		$replace['#refresh_id#'] = $this->getCmd(null, 'Refresh')->getId();;
 		$replace['#timer#'] = ($this->getConfiguration('freq') > 0) ? 'setInterval(refresh'.$replace['#uid#'].','.$this->getConfiguration('freq').'000);' : '';
 			//$templ = getTemplate('core', $version, 'eqLogic');
@@ -147,37 +173,6 @@ class consoWidget extends eqLogic {
 			'.$this->getCode().'
 			</div> ';
 	}
-
-	public static function dependancy_info(){ 
-		log::add('consoWidget', 'debug','dependancy_info');
-		$return = array();
-		$return['state'] = 'ok';
-		$requiredExtensions = ['curl', 'mbstring'];
-		foreach($requiredExtensions as $requiredExtension) {
-			if (!extension_loaded($requiredExtension)) {
-				$return['state'] = 'nok';
-				log::add('consoWidget', 'error','dependancy '.$requiredExtension.' is missing');
-			}
-		}
-		$return['log'] = 'consoWidget_update';
-		$return['progress_file'] = '/tmp/compilation_consoWidget_in_progress';
-		log::add('consoWidget', 'debug','dependancy_info2');
-		if(file_exists('/var/www/html/log/consoWidget_update') && file_exists('/tmp/compilation_consoWidget_in_progress')){
-		log::add('consoWidget', 'debug','dependancy_info3');
-			exec('sudo bash -c "cat /var/www/html/log/consoWidget_update |grep -v "Preparing" | wc -l > /tmp/compilation_consoWidget_in_progress"');
-		}	
-		return $return;
-	}
-	public static function dependancy_install() {
-		if (file_exists('/tmp/compilation_consoWidget_in_progress')) {
-			return;
-		}
-		log::remove('consoWidget_update');
-		$cmd = 'sudo /bin/bash ' . dirname(__FILE__) . '/../install.sh';
-		$cmd .= ' > ' . log::getPathToLog('consoWidget_update') . ' 2>&1 &';
-		exec($cmd);
-	}
-
 }
 
 class consoWidgetCmd extends cmd {
@@ -207,7 +202,7 @@ class consoWidgetCmd extends cmd {
 
 	}
 
-	
+
 }
 
 ?>

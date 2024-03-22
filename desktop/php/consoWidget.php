@@ -35,7 +35,7 @@ $eqLogics = eqLogic::byType('consoWidget');
             foreach ($eqLogics as $eqLogic) {
                 $opacity = ($eqLogic->getIsEnable()) ? '' : 'disableCard';
                 echo '<div class="eqLogicDisplayCard cursor '.$opacity.'" data-eqLogic_id="' . $eqLogic->getId() . '">';
-                echo '<img src="plugins/consoWidget/plugin_info//consoWidget_icon.png"/>';
+                echo '<img src="plugins/consoWidget/plugin_info/consoWidget_icon.png"/>';
                 echo '<br>';
                 echo '<span class="name">' . $eqLogic->getHumanName(true, true) . '</span>';
                 echo '</div>';
@@ -99,30 +99,7 @@ $eqLogics = eqLogic::byType('consoWidget');
                 </div>
                 <br/>
                 <br/>
-	            <div class="form-group">
-                    <label class="col-sm-3 control-label">{{Type De widget electrique}}</label>
-                    <div class="col-sm-3">
-                        <select id="consoWidget_type"  class="eqLogicAttr configuration form-control" data-l1key="configuration" data-l2key="type_consoWidget">
-                           <option value="1">{{Tableau Prix}}</option>
-                           <option value="2">{{Tableau Consomation}}</option>
-                           <option value="3">{{Gauge Puissance}}</option>
-                           <option value="4">{{Tableau Variation}}</option>
-                           <option value="5">{{Consomation Du Jours}}</option>
-                           <option value="6">{{Statistique}}</option>
-                           <option value="7">{{7 Derniers Jours}}</option>
-                           <option value="8">{{4 Dernière semaine}}</option>
-                           <option value="9">{{12 dernirs mois}}</option>
-                           <option value="10">{{7 Dernier jous Euro}}</option>
-                           <option value="11">{{4 dernière semaine Euro}}</option>
-                           <option value="12">{{12 derniers mois Euro}}</option>
-                           <option value="13">{{12 derrnièrs mois TTC}}</option>
-                           <option value="14">{{Degré jours unifié par ans}}</option>
-                       </select>
-                   </div>
-               </div>
-               <br/>
-               <br/>
-               <div class="form-group">
+                <div class="form-group">
                     <label class="col-sm-3 control-label">{{Équipement Suivi Conso}}</label>
                     <div class="col-sm-3">
                         <select id="consoWidget_type"  class="eqLogicAttr configuration form-control" data-l1key="configuration" data-l2key="idequip">
@@ -134,7 +111,7 @@ $eqLogics = eqLogic::byType('consoWidget');
                                 if ($eqLogic->getIsEnable() == 1) {
                                     echo '<option value='.$eqLogic->getId().' >'.$eqLogic->getName().'</option>';
                                 }
-                            } 
+                            }
                         ?>
                        </select>
                    </div>
@@ -142,11 +119,30 @@ $eqLogics = eqLogic::byType('consoWidget');
                <br/>
                <br/>
                <div class="form-group">
-                    <label class="col-sm-3 control-label">{{Protocole}}</label>
+                    <label class="col-sm-3 control-label">{{Type de widget}}</label>
                     <div class="col-sm-3">
-                        <select id="consoWidget_type"  class="eqLogicAttr configuration form-control" data-l1key="configuration" data-l2key="consowidget_protocole">
-                           <option value="0">{{Http}}</option>
-                           <option value="1">{{Https}}</option>
+                        <select id="consoWidget_type"  class="eqLogicAttr configuration form-control" data-l1key="configuration" data-l2key="type_consoWidget">
+                           <option value="1">{{Tableau prix}}</option>
+                           <option value="2">{{Tableau consommation}}</option>
+                           <option value="3">{{Gauge puissance}}</option>
+                           <option value="4">{{Tableau variation}}</option>
+                           <option value="5">{{Consommation du jour}}</option>
+                           <?php
+                                $eqLogicsconso = eqLogic::byType('conso');
+                                if(count($eqLogicsconso) > 1) {
+                                    echo '<option value="6">{{Statistiques}}</option>';
+                                }
+                            ?>
+                           <option value="7">{{7 derniers jours}}</option>
+                           <option value="8">{{4 dernières semaines}}</option>
+                           <option value="9">{{12 derniers mois}}</option>
+                           <option value="10">{{7 derniers jours Euro}}</option>
+                           <option value="11">{{4 dernières semaines Euro}}</option>
+                           <option value="12">{{12 derniers mois Euro}}</option>
+                           <option value="13">{{12 derniers mois TTC}}</option>
+                           <option value="14">{{Degré jour unifié par an}}</option>
+						   <option value="15">{{Pluriannuel}}</option>
+						   <option value="16">{{Pluriannuel en € (HT)}}</option>
                        </select>
                    </div>
                </div>
