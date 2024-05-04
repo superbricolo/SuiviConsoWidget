@@ -40,3 +40,11 @@
         <input type="checkbox" class="configKey" data-l1key="modeDebug">
     </div>
 </div>
+</br>
+</br>
+<div class="form-group">
+    <label class="col-lg-4 control-label" >{{Utilisation iframe : }}</label>
+    <div class="col-lg-3">
+        <input type="checkbox" class="configKey" data-l1key="UseIframe">
+    </div>
+</div>
