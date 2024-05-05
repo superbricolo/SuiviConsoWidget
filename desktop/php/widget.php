@@ -38,27 +38,36 @@ if (jeedom::version() < "4.0.0") {
 	//echo "V3";
 	$versionjeedom = "V3";
 	sendVarToJS('bgmodalcolorvar', "var(--bg-modal-color)");
-	sendVarToJS('txtcolor', "var(--sc-lightTxt-color)");
+	sendVarToJS('txtcolor', "var(--sc-lightTxt-color) !important");
+	sendVarToJS('important', "!important");
 	echo '<style type="text/css">
 	.highcharts-axis-labels text tspan {fill: var(--sc-lightTxt-color) !important;}
-	.highcharts-axis-labels > text {fill: #484343 !important;}
 	.highcharts-legend-item:not(.highcharts-legend-item-hidden) text{fill: var(--sc-lightTxt-color) !important;}
+	#gauge .highcharts-yaxis-labels > text {fill: #484343 !important;}
+	#widget_statBox .highcharts-label > text {fill: var(--sc-lightTxt-color) !important;}
+	#widget_statBox .carousel-caption {fill: var(--sc-lightTxt-color) !important;}
 	.container {width: 1300px;}
 	</style>';
 } else {
 	//echo "V4";
 	$versionjeedom = "V4";
 	sendVarToJS('bgmodalcolorvar', "var(--bg-modal-color)");
-	sendVarToJS('txtcolor', "var(--txt-color)");
+	sendVarToJS('txtcolor', "var(--link-color) !important");
+	sendVarToJS('important', "!important");
 	echo '<style type="text/css">
 	.highcharts-axis-labels text tspan {fill: var(--txt-color) !important;}
-	.highcharts-axis-labels > text {fill: #484343 !important;}
+	.highcharts-yaxis-labels > text {fill: var(--txt-color) !important;}
+	#gauge .highcharts-yaxis-labels > text {fill: #484343 !important;}
+	#widget_statBox .highcharts-label > text {fill: var(--txt-color) !important;}
+	#widget_statBox .carousel-caption {fill: var(--txt-color) !important;}
 	.container {width: 1300px;}
 	</style>';
 }
 
 if (jeedom::version() >= "4.4.0") {
 	$versiondate = "V4.4";
+	sendVarToJS('txtcolor', "var(--link-color) ");
+	sendVarToJS('important', "");
 }
 else {
 	$versiondate = "V4.3";
